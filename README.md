@@ -1,8 +1,6 @@
 # Kate Keefe's Portfolio
 
-[Diffusion Page](Diffusion.md)
 
-[Echo internship Page](Internship.md)
 
 ---
 ## This webiste is made using Github Pages
