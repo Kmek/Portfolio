@@ -1,6 +1,10 @@
 # Kate Keefe's Portfolio
 
-
+* `index.md`
+* `diffusion.md`
+* `internship.md`
+* `pathfinding.md`
+* `cs50.md`
 
 ---
 ## This webiste is made using Github Pages
