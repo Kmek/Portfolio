@@ -1,7 +1,3 @@
-# Main Index
-
-<br>
-
 ---
 
 ### [Diffusion Simulation](diffusion)
@@ -14,7 +10,7 @@
 
 ---
 
-### [Science Fair 2019 Pathfinding](pathfinding)
+### [Science Fair 2019 - Pathfinding](pathfinding)
 
 `HTML` `CSS` `JavaScript` A pathfinding simulation for a pathfinding robot for the MWV Science Fair. 
 
@@ -26,7 +22,7 @@
 
 ### [Web Design](webdesign)
 
-`HTML` `CSS` `JavaScript` Some websites I created.
+`HTML` `CSS` `JavaScript` Some of my more decent websites.
 
 ---
 
@@ -56,7 +52,7 @@
 
 ### [GrabCAD](grabcad)
 
-(Not code on GitHub) Some of my 3D models made with Autodesk Inventor Pro.
+(Not code on GitHub) Some of my 3D models, made with Autodesk Inventor Pro.
 
 ---
 

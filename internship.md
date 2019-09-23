@@ -4,7 +4,8 @@ Title: Echo Group Internship
 
 # Internship At The Echo Group
 
-Lots of `PowerShell` stuff.
+At The Echo Group, I got to work on real software products even through I was an intern.
+
 
 * Docker
 * WinForms with PowerShell
