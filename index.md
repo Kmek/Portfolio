@@ -14,9 +14,9 @@
 
 ---
 
-### [Science Fair Pathfinding](pathfinding)
+### [Science Fair 2019 Pathfinding](pathfinding)
 
-`HTML` `CSS` `JavaScript` A pathfinding simulation for a pathfinding robot for science fair. 
+`HTML` `CSS` `JavaScript` A pathfinding simulation for a pathfinding robot for the MWV Science Fair. 
 
 ---
 
@@ -46,7 +46,7 @@
 
 ### [Echo Group Internship](internship)
 
-`PowerShell` A Summer internship at The Echo Group, a software company in Conway, NH.
+`PowerShell` `MarkDown` A Summer internship at The Echo Group, a software company in Conway, NH.
 
 ---
 
