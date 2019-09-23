@@ -1,6 +1,8 @@
 # Main Index Page
 
-[Diffusion Page](Diffusion.md)
+<div>
+    ### [Diffusion Page](Diffusion.md)
+</div>
 
 [Echo internship Page](Internship.md)
 
