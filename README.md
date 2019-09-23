@@ -7,7 +7,7 @@
 * `cs50.md`
 
 ---
-## This webiste is made using Github Pages
+## This website is made using Github Pages
 
 GitHub uses Jekyll to build pages from `MarkDown` files in this repository.
 
