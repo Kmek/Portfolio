@@ -13,10 +13,11 @@ This type of algorithm measures the distance travelled and the distance to the g
 
 ---
 
-[View the Pathfinding Simulation](https://kmek.github.io/ScienceFair-Maze/ "Pathfinding Simulation"){target="_blank"}
+[View the Pathfinding Simulation](https://kmek.github.io/ScienceFair-Maze/ "Pathfinding Simulation")
 
 ---
 
 <br>
 
 * `JavaScript`
+* Picture of robot, picture from science fair? (mention winnign robotics category?)

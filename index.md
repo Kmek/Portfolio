@@ -6,7 +6,7 @@
 
 ### [Diffusion Simulation](diffusion)
 
-A diffusion simulation reconstructed and improved for the Kennett High School Science Department, as the old flash program couldn't be run.
+`HTML` `CSS` `JavaScript` A diffusion simulation reconstructed and improved for the Kennett High School Science Department, as the old flash program couldn't be run.
 
 ---
 
@@ -16,7 +16,7 @@ A diffusion simulation reconstructed and improved for the Kennett High School Sc
 
 ### [Science Fair Pathfinding](pathfinding)
 
-A pathfinding simulation for a pathfinding robot for science fair. 
+`HTML` `CSS` `JavaScript` A pathfinding simulation for a pathfinding robot for science fair. 
 
 ---
 
@@ -26,7 +26,7 @@ A pathfinding simulation for a pathfinding robot for science fair.
 
 ### [Web Design](webdesign)
 
-Websites created with `HTML`, `CSS`, and even a little `JavaScript`
+`HTML` `CSS` `JavaScript` Some websites I created.
 
 ---
 
@@ -36,7 +36,7 @@ Websites created with `HTML`, `CSS`, and even a little `JavaScript`
 
 ### [Computer Science Courses](cs50)
 
-A collection of several high school computer science courses.
+`C` `JavaScript` `React Native` `Java` A collection of several high school computer science courses.
 
 ---
 
@@ -46,7 +46,7 @@ A collection of several high school computer science courses.
 
 ### [Echo Group Internship](internship)
 
-A Summer internship at The Echo Group, a software company in Conway, NH.
+`PowerShell` A Summer internship at The Echo Group, a software company in Conway, NH.
 
 ---
 
