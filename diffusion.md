@@ -4,26 +4,12 @@ Title: Diffusion Simulation
 
 ## Diffusion Simulation
 
-Stuff about the diffusion simulation.
-Stuff about the diffusion simulation.
-Stuff about the diffusion simulation.
-Stuff about the diffusion simulation.
-Stuff about the diffusion simulation.
+<br>
 
-Stuff about the diffusion simulation.
-Stuff about the diffusion simulation.
-Stuff about the diffusion simulation.
-Stuff about the diffusion simulation.
-Stuff about the diffusion simulation.
+---
 
-Stuff about the diffusion simulation.
-Stuff about the diffusion simulation.
-Stuff about the diffusion simulation.
-Stuff about the diffusion simulation.
-Stuff about the diffusion simulation.
+[View the Diffusion Simulation](https://eaglesoftworks.github.io/Diffusion/ "Molecular Diffusion Simulation")
 
-Stuff about the diffusion simulation.
-Stuff about the diffusion simulation.
-Stuff about the diffusion simulation.
-Stuff about the diffusion simulation.
-Stuff about the diffusion simulation.
+---
+
+<br>

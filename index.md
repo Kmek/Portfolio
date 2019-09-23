@@ -4,13 +4,9 @@
 
 ---
 
-<br>
+### [Diffusion Simulation Page](diffusion)
 
-| ### [Diffusion Simulation Page](diffusion) |
-| -------------------------------------------- |
-| A diffusion simulation reconstructed and improved for the Kennett High School Science Department, as the old flash program couldn't be run. |
-
-<br>
+A diffusion simulation reconstructed and improved for the Kennett High School Science Department, as the old flash program couldn't be run.
 
 ---
 
