@@ -24,6 +24,16 @@ A pathfinding simulation for a pathfinding robot for science fair.
 
 ---
 
+### [Web Design](webdesign)
+
+Websites created with `HTML`, `CSS`, and even a little `JavaScript`
+
+---
+
+<br>
+
+---
+
 ### [Computer Science Courses](cs50)
 
 A collection of several high school computer science courses.
@@ -39,3 +49,15 @@ A collection of several high school computer science courses.
 A Summer internship at The Echo Group, a software company in Conway, NH.
 
 ---
+
+<br>
+
+---
+
+### [GrabCAD](grabcad)
+
+(Not code on GitHub) Some of my 3D models made with Autodesk Inventor Pro.
+
+---
+
+<br>

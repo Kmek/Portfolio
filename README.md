@@ -1,12 +1,15 @@
 # Kate Keefe's Portfolio
 
-* `index.md`
-* `diffusion.md`
-* `internship.md`
-* `pathfinding.md`
-* `cs50.md`
+* `index.md` - the main table of contents
+* `diffusion.md` - a page for the Diffusion Simulation
+* `pathfinding.md` - a page for the Science Fair Pathfinding code
+* `webdesign.md` - a page for some websites I created
+* `cs50.md` - a page for my computer science courses
+* `internship.md` - a page about my internship at The Echo Group
+* `grabcad.md` - a page about my 3D models
 
 ---
+
 ## This website is made using Github Pages
 
 GitHub uses Jekyll to build pages from `MarkDown` files in this repository.
