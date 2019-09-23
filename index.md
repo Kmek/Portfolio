@@ -1,10 +1,10 @@
-# Main Index Page
+# Main Index
 
 <br>
 
 ---
 
-### [Diffusion Simulation Page](diffusion)
+### [Diffusion Simulation](diffusion)
 
 A diffusion simulation reconstructed and improved for the Kennett High School Science Department, as the old flash program couldn't be run.
 
@@ -14,7 +14,7 @@ A diffusion simulation reconstructed and improved for the Kennett High School Sc
 
 ---
 
-### [Science Fair Pathfinding Page](pathfinding)
+### [Science Fair Pathfinding](pathfinding)
 
 A pathfinding simulation for a pathfinding robot for science fair. 
 
@@ -24,9 +24,9 @@ A pathfinding simulation for a pathfinding robot for science fair.
 
 ---
 
-### [Harvard CS50 Courses Page](cs50)
+### [Computer Science Courses](cs50)
 
-A collection of several courses created by Harvard and offered to high school students.
+A collection of several high school computer science courses.
 
 ---
 
@@ -34,7 +34,7 @@ A collection of several courses created by Harvard and offered to high school st
 
 ---
 
-### [Echo Group Internship Page](internship)
+### [Echo Group Internship](internship)
 
 A Summer internship at The Echo Group, a software company in Conway, NH.
 
