@@ -1,33 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-		<link rel="icon" href="media/GitHub-Mark-64px.png">
-	<link href="theme/prism.css" rel="stylesheet" />
-	
+		<title>Portfolio</title>
+		<meta name="author" content="Kate Keefe">
+		<meta name="description" content="Kate Keefe's GitHub Portfolio">
+		<link rel="icon" href="src/media/GitHub-Mark-64px.png">
+
+		<link href="src/theme/prism.css" rel="stylesheet"/>
+		
 </head>
-<body>
-	<div id="header">
-		<h1>Hello world!!</h1>
+<body onload="loadBase()">
+	<div id="header"></div>
+
+	<div id="page">
+			<ul>
+				<li><button id="opt1">opt 1</button></li>
+				<li><button>opt 2</button></li>
+			</ul>
 	</div>
 
-	<script src="http://www.w3schools.com/lib/w3data.js"></script>
-	<div id="page" w3-include-html="main.html"></div>
-	<script>w3IncludeHTML();</script>
-	
-
-	<div w3-include-html="codeblocks.html"></div>
-
-
-	<script>w3IncludeHTML();</script>
-	<script src="theme/prism.js"></script>
-
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script>
-	$(document).ready(function(){
-	
-	$('#content').load("new.html");
-
-	});
-</script>
+	<div id="footer"></div>
+	<script src="src/theme/prism.js"></script>
+	<script src="src/script.js"></script>
 </body>
 </html>
