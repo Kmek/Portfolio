@@ -32,7 +32,8 @@ body {
 #page {
 	background-color: #eeeeee;
 	width: 75%;
-	max-width: 700px;
+	max-width: 750px;
+	min-width: 450px;
 	min-height: 300px;
 	margin-left: auto;
 	margin-right: auto;
@@ -49,7 +50,7 @@ body {
 }
 #footerText {
 	margin-left: 15px;
-	font-size: 14px;
+	font-size: 16px;
 	color: #ffffff;
 	float: left;
 }
@@ -84,12 +85,21 @@ ul li::before {
 
 
 /********** Base Components **********/
-h1 {
+h2 {
+	margin: 5px 0;
 	color: var(--accent);
+}
+
+p {
+	font-size: 16px;
+	line-height: 24px;
 }
 
 mark {
 	background-color: #cccccc;
+	padding: 2px 5px;
+	border: 1px solid #ffffff;
+	border-radius: 2px;
 }
 
 hr {
@@ -101,8 +111,10 @@ hr {
 button {
 	background: none;
 	padding: 5px;
+	font-size: 16px;
 	border-radius: 5px;
 	border: 3px solid var(--accent);
+	outline: none;
 	transition-duration: 0.7s;
 }
 button:hover {
