@@ -3,42 +3,111 @@
 	padding: 0;
 }
 
+:root {
+    --footer: #585858; /* a specific grey */
+    --accent: #08355f; /* a dark blue */
+}
+
+body {
+	background-color: var(--footer);
+	font-family: Arial, Helvetica, sans-serif;
+}
+/********** Header **********/
 #header {
-	background-image: linear-gradient(#2b2b2b, #0a0a0a, #8c8c8c);
+	background-image: linear-gradient(#818181, #0a0a0a, #414141);
 	width: 100%;
-	height: 125px;
+	height: 60px;
 	text-align: center;
+	padding-top: 25px;
+}
+#title{
+	color: #ffffff;
+	width: 100%;
 }
 
-h1{
-	color: white;
-	width: 500px;
+/********** Page **********/
+#pageBackground {
+	background-color: var(--accent);
 }
-
 #page {
-
-	background-color: #f0ede1;
-    max-width: 80%;
-	margin-left:auto;
+	background-color: #eeeeee;
+	width: 75%;
+	max-width: 700px;
+	min-height: 300px;
+	margin-left: auto;
 	margin-right: auto;
-	padding-top: 15px;
-	padding-bottom: 15px;
+	padding: 15px 15px;
 	text-align: left;
-	
 }
 
+/********** Footer **********/
 #footer{
-	background-color: grey;
+	background-color: var(--footer);
 	width: 100%;
-	height: 75px;
-	text-align: center;
+	height: 50px;
+	padding-top: 15px;
+}
+#footerText {
+	margin-left: 15px;
+	font-size: 14px;
+	color: #ffffff;
+	float: left;
+}
+#githubBtn {
+	margin-right: 15px;
+	color: #ffffff;
+	float: right;
+	font-size: 16px;
 }
 
+/********** Navigation **********/
 ul {
 	padding: 5px;
-	margin-left: 30px;
+	list-style: none;
+}
+ul li::before {
+	width: 20px;
+	display: inline-block;
+	color: var(--accent);
+	content: "\2666";
+	font-size: 20px;
+	font-weight: bold;
+}
+#navigation button {
+	margin: 5px 0;
+	font-size: 18px;
+}
+#navigation p{
+	margin-left: 25px;
+	padding: 5px 0;
 }
 
-#navigation, li {
-	
+
+/********** Base Components **********/
+h1 {
+	color: var(--accent);
 }
+
+mark {
+	background-color: #cccccc;
+}
+
+hr {
+	margin: 10px 15px;
+	border: 0;
+	border-top: 2px dashed var(--accent);
+}
+
+button {
+	background: none;
+	padding: 5px;
+	border-radius: 5px;
+	border: 3px solid var(--accent);
+	transition-duration: 0.7s;
+}
+button:hover {
+	background-color: var(--accent);
+	color: #ffffff;
+}
+
+
