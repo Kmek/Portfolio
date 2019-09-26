@@ -4,23 +4,29 @@
 		<title>Portfolio</title>
 		<meta name="author" content="Kate Keefe">
 		<meta name="description" content="Kate Keefe's GitHub Portfolio">
-		<link rel="icon" href="src/media/GitHub-Mark-64px.png">
+		<link rel="icon" href="media/GitHub-Mark-64px.png">
 
-		<link href="src/theme/prism.css" rel="stylesheet"/>
+		<link href="theme/prism.css" rel="stylesheet"/>
+		<link href="styles.css" rel="stylesheet"/>
 		
 </head>
 <body onload="loadBase()">
-	<div id="header"></div>
+	<div>
+		<div id="header"></div>
 
-	<div id="page">
-			<ul>
-				<li><button id="opt1">opt 1</button></li>
-				<li><button>opt 2</button></li>
+		<div id="page">
+			<ul id="navigation">
+				<li><a href="./diffusion.html"><button>Diffusion Simulation</button></a></li>
+				<li><a href="./pathfinding.html"><button>Science Fair 2019 - Pathfinding</button></a></li>
+				<li><a href="./websites.html"><button>Websites</button></a></li>
+				<li><a href="./cs50.html"><button>Computer Science Courses</button></a></li>
+				<li><a href="./grabcad.html"><button>GrabCAD</button></a>
 			</ul>
-	</div>
+		</div>
 
-	<div id="footer"></div>
-	<script src="src/theme/prism.js"></script>
-	<script src="src/script.js"></script>
+		<div id="footer"></div>
+	</div>
+	<script src="theme/prism.js"></script>
+	<script src="script.js"></script>
 </body>
 </html>

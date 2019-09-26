@@ -11,9 +11,10 @@ const footer = document.getElementById("footer")
     page.innerHTML=object
 }*/
 
+// Load the header and footer from a file, so they only have to be changed in one place
 function loadBase() {
-    header.innerHTML='<object type="text/html" data="src/header.html"></object>'
-    footer.innerHTML='<object type="text/html" data="src/footer.html"></object>'
+    header.innerHTML='<object type="text/html" data="header.html"></object>'
+    footer.innerHTML='<object type="text/html" data="footer.html"></object>'
 }
 
 

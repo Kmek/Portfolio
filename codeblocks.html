@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+		<title>Portfolio</title>
+		<meta name="author" content="Kate Keefe">
+		<meta name="description" content="Kate Keefe's GitHub Portfolio">
+		<link rel="icon" href="media/GitHub-Mark-64px.png">
+
+		<link href="theme/prism.css" rel="stylesheet"/>
+		
+</head>
+<body onload="loadBase()">
+	<div id="header"></div>
+
+	<div id="page">
+		<pre><code class="language-css match-braces rainbow-braces">p { color: red }</code></pre>
+
+		<h2>hello!</h2>
+
+		<pre><code class="language-javascript match-braces rainbow-braces">const draw = {
+		circle: function(x, y, radius, color) {
+			ctx.beginPath();
+			ctx.arc(x, y, radius, 0, 2 * Math.PI);
+			ctx.strokeStyle = color;
+			ctx.stroke();
+			ctx.fillStyle = color;
+			ctx.fill();
+		},</code></pre>
+	</div>
+
+	<div id="footer"></div>
+	<script src="theme/prism.js"></script>
+	<script src="script.js"></script>
+</body>
+</html>
