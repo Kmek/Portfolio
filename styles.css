@@ -32,12 +32,12 @@ body {
 #page {
 	background-color: #eeeeee;
 	width: 75%;
-	max-width: 750px;
-	min-width: 450px;
+	max-width: 725px;
+	min-width: 425px;
 	min-height: 300px;
 	margin-left: auto;
 	margin-right: auto;
-	padding: 15px 15px;
+	padding: 15px 25px;
 	text-align: left;
 }
 
@@ -83,17 +83,32 @@ ul li::before {
 	padding: 5px 0;
 }
 
+/********** Diffusion Page **********/
+/* .iframeContainer {
+	background-color: green;
+	width: 100%;
+	height: 470px;
+	overflow: hidden;
+	align: center;
+}
+#diffusionSim {
+	transform: scale(0.65); 
+    transform-origin: 0 0;
+	width: 154%;
+	height: 800px;
+} */
+
 /********** GrabCAD Page **********/
 .model {
 	width: 80%;
 	height: 300px;
-	margin: 0 10%;
+	margin: 5px 10%;
 	background-image: radial-gradient( #414141, #0a0a0a);
 	border-radius: 10px;
 }
 
 /********** Base Components **********/
-h2 {
+h2, h3, h4 {
 	margin: 5px 0;
 	color: var(--accent);
 }
@@ -101,17 +116,19 @@ h2 {
 p {
 	font-size: 16px;
 	line-height: 24px;
+	margin: 5px 0;
 }
 
 mark {
 	background-color: #cccccc;
 	padding: 2px 5px;
+	font-family: "Courier New", Courier, monospace;
 	border: 1px solid #ffffff;
 	border-radius: 2px;
 }
 
 hr {
-	margin: 10px 15px;
+	margin: 20px 15px;
 	border: 0;
 	border-top: 2px dashed var(--accent);
 }
@@ -130,4 +147,15 @@ button:hover {
 	color: #ffffff;
 }
 
+img {
+	width: 80%;
+	margin: 5px 0 0 10%; /*5px on top, 10% on left*/
+}
 
+.caption {
+	width: 100%;
+	margin-top: 0;
+	text-align: center;
+	font-size: 14px;
+	font-style: italic;
+}
