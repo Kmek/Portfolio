@@ -83,6 +83,14 @@ ul li::before {
 	padding: 5px 0;
 }
 
+/********** GrabCAD Page **********/
+.model {
+	width: 80%;
+	height: 300px;
+	margin: 0 10%;
+	background-image: radial-gradient( #414141, #0a0a0a);
+	border-radius: 10px;
+}
 
 /********** Base Components **********/
 h2 {

@@ -15,3 +15,5 @@
 Even though GitHub offers it, this website is not made with a Jekyll Theme. 
 
 This website uses [PrismJS](https://prismjs.com/) for colorful codeblocks.
+
+This website uses [Vectary](https://www.vectary.com/) for displaying 3D models.
