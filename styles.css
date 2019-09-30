@@ -20,7 +20,7 @@ body {
 	text-align: center;
 	padding-top: 25px;
 }
-#title{
+#title {
 	color: #ffffff;
 	width: 100%;
 }
@@ -28,6 +28,8 @@ body {
 /********** Page **********/
 #pageBackground {
 	background-color: var(--accent);
+	background-image: url("./media/Paper.png");
+	background-repeat: repeat;
 }
 #page {
 	background-color: #eeeeee;
@@ -101,14 +103,15 @@ ul li::before {
 /********** GrabCAD Page **********/
 .model {
 	width: 80%;
-	height: 300px;
+	height: 400px;
 	margin: 5px 10%;
 	background-image: radial-gradient( #414141, #0a0a0a);
 	border-radius: 10px;
 }
+/* Good model blue: #145087 */
 
 /********** Base Components **********/
-h2, h3, h4 {
+h1, h2, h3, h4 {
 	margin: 5px 0;
 	color: var(--accent);
 }
@@ -129,7 +132,6 @@ mark {
 
 hr {
 	margin: 20px 15px;
-	border: 0;
 	border-top: 2px dashed var(--accent);
 }
 
@@ -152,10 +154,18 @@ img {
 	margin: 5px 0 0 10%; /*5px on top, 10% on left*/
 }
 
+/********** Extra Components **********/
+
 .caption {
 	width: 100%;
 	margin-top: 0;
 	text-align: center;
 	font-size: 14px;
 	font-style: italic;
+}
+
+.center {
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
 }
