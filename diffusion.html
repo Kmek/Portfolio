@@ -85,6 +85,128 @@ function toggleTimer() {
 }</code></pre>
 			
 			<p><mark>updateMolecule()</mark> and molecule class</p>
+<pre><code class="language-javascript match-braces rainbow-braces line-numbers">class Molecule {
+
+		constructor(moleculeType, startX, startY) {
+			this.moleculeType = moleculeType;
+			this.x = startX;
+			this.y = startY;
+		}
+	
+		/************************************/
+	
+		/************************************/
+	
+		/************************************/
+	
+		updateMolecule() {
+			let randomX, randomY, radius;
+			if (this.moleculeType == moleculeEnum.smallMolecule) {
+				radius = parseInt(mole2Radius);
+				
+				// Random added value in a variable so it can be removed
+				randomX = randomCo();
+				randomY = randomCo();
+				this.x += randomX;
+				this.y += randomY;
+				
+				// Only looks to see if X is inside the canvas, go the other way
+				if (!isInCanvas(radius, this.x, 200)) {
+					this.x -= (randomX * 2);
+				}
+				// Only looks to see if Y is inside the canvas, go the other way
+				if (!isInCanvas(radius, 200, this.y)) {
+					this.y -= (randomY * 2);
+				}
+				
+				// Only do other checks if molecule is in a certain range
+				if (this.x >= (wallX - radius) && this.x <= (440 + radius)) {
+					if (isInWall(radius, this.x, this.y)) {
+						// If molecule's inside the port, move it so it's not hitting the top or bottom
+						if (isInPort(1, -Math.abs(randomY), this.y)) {
+							if (this.y < (145 + radius)) {
+								this.y = (145 + radius);
+							}
+							else if (this.y > (220 - radius)) {
+								this.y = (220 - radius);
+							}
+						}
+						else if (isInPort(2, -Math.abs(randomY), this.y)) {
+							if (this.y < (280 + radius)) {
+								this.y = 280 + radius;
+							}
+							else if (this.y > (355 - radius)) {
+								this.y = 355 - radius;
+							}
+						}
+						// Move molecules away from the wall
+						else {
+							// Check for x or y, then adjust accordingly
+							if (this.x < 375) {
+								// Sets molecule outside wall
+								this.x = wallX - radius;
+							}
+							else {
+								// Fix this to do the same as the other
+								this.x = wallX + wallWidth + radius;
+							}
+						}
+						//clearInterval(canvasDrawing);
+						//clearInterval(timerTicking);
+					}
+					else if (this.x > (wallXEnd)) {
+						if (isInAT(1, radius, this.x, this.y)) {
+							this.x = 325 - radius;
+							this.y = 70;
+						}
+						else if (isInAT(2, radius, this.x, this.y)) {
+							this.x = 325 - radius;
+							this.y = 430;
+						}
+					}
+				}
+			}
+			// Separated big molecule checks
+			else if (this.moleculeType == moleculeEnum.bigMolecule) {
+				radius = parseInt(mole1Radius);
+				
+				randomX = randomCo();
+				randomY = randomCo();
+				this.x += randomX;
+				this.y += randomY;
+				
+				// Only looks to see if X is inside the canvas, go the other way
+				if (!isInCanvas(radius, this.x, 200) || this.x > (wallX-radius)) {
+					this.x -= (randomX * 2);
+				}
+				// Only looks to see if Y is inside the canvas, go the other way
+				if (!isInCanvas(radius, 200, this.y)) {
+					this.y -= (randomY * 2);
+				}
+			}
+		}
+	
+		draw() {
+			// Draws Large molecule type
+			if (this.moleculeType == moleculeEnum.bigMolecule) {
+				// Linear gradient for style
+				let gradient = ctx.createLinearGradient(this.x-75, 0, this.x+100, 0);
+				gradient.addColorStop(0, "#540000");
+				gradient.addColorStop(0.5, "red");
+				gradient.addColorStop(1, "#ffac75");
+					
+				draw.circle(this.x, this.y, mole1Radius, gradient);
+			} else {
+				// Draws Small molecule type
+				let gradient = ctx.createRadialGradient(this.x, this.y, mole2Radius*(2/3), this.x, this.y, mole2Radius*(2/15));
+				gradient.addColorStop(0, "#002602");
+				gradient.addColorStop(0.75, "#47772c"); // inside color
+				
+				draw.circle(this.x, this.y, mole2Radius, gradient);
+			}
+		}
+	}
+</code></pre>
 
 		</div>
 	</div>
