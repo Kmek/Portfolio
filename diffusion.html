@@ -26,29 +26,44 @@
 			<p>The original flash program did not look too complicated. It basically had green particles that bounced around a box with a divider in the middle. The point of the simulation was to demonstrate the random movement of particles. After a certain amount of time, the particles would be equal on each side of the divider, despite their random motion.</p>
 
 			<hr>
-
-			<img src="./media/Diffusion sim markup.png" alt="Diffusion sim markup">
-			<p class="caption">Picture of the Diffusion Sim with changes requested by the Science Department.</p>
-
+			
 			<p>The Science Department also wanted a few extra changes, since the Diffusion Sim was being remade from scratch. </p>
 
-			<h4>The new requirements were:</h4>
-			<ul>
-				<li>A timer built into the page</li>
-				<li>Larger molecules that can't cross the divider</li>
-				<li>Sliders for adjusting the size of the molecules</li>
-				<li>Active Transport to force molecules back to the starting side</li>
-				<li>A button to enable/disable Active Transport</li>
-				<li>Buttons to adjust the temperature</li>
-			</ul>
+			<img class="shadow" src="./media/Diffusion sim markup.png" alt="Diffusion sim markup">
+			<p class="caption">Picture of the Diffusion Sim with changes requested by the Science Department.</p>
+
+			<div class="outline">
+				<h4>The new requirements were:</h4>
+				<ul>
+					<li>A timer built into the page</li>
+					<li>Larger molecules that can't cross the divider</li>
+					<li>Sliders for adjusting the size of the molecules</li>
+					<li>Active Transport to force molecules back to the starting side</li>
+					<li>A button to enable/disable Active Transport</li>
+					<li>Buttons to adjust the temperature</li>
+				</ul>
+			</div>
 
 			<p>After recreating the old Diffusion Sim, these requirements weren't too tricky.</p>
+			
+			<hr>
+			<div class="center">
+				<h3>View The Diffusion Simulation</h3>
+
+				<a href="https://eaglesoftworks.github.io/Diffusion/" target="_blank"><button>Visit Website</button></a>
+				
+				<a href="https://github.com/EagleSoftworks/Diffusion" target="_blank"><button>View on GitHub</button></a>
+			</div>
+
+			<!--<div class="iframeContainer">
+				<iframe id="diffusionSim" src="https://eaglesoftworks.github.io/Diffusion/"></iframe>
+			</div>-->
 
 			<hr>
 
 			<h3>Code Snippets</h3>
 
-			<p><mark>toggleTimer</mark> is a function that is used to start and stop the Diffusion Sim.</p>
+			<p><mark>toggleTimer</mark> is a function that is used to start and stop the Diffusion Sim. It uses a timer called <mark>canvasDrawing</mark> to call the <mark>drawCanvas()</mark> function every <mark>100ms</mark> and another timer called <mark>timerTicking</mark> to call the <mark>tick()</mark> function every <mark>1000ms</mark>. A <mark>boolean</mark> called <mark>timerOn</mark> is used to track if the simulation is running.</p>
 
 <pre><code class="language-javascript match-braces rainbow-braces line-numbers">// Toggles timer (and drawing) on/off
 function toggleTimer() {
@@ -68,17 +83,9 @@ function toggleTimer() {
 		countMolecules();
 	}
 }</code></pre>
+			
+			<p><mark>updateMolecule()</mark> and molecule class</p>
 
-			<hr>
-			<div class="center">
-				<h3>View The Diffusion Simulation</h3>
-
-				<a href="https://eaglesoftworks.github.io/Diffusion/" target="_blank"><button>Visit Website</button></a>
-			</div>
-
-			<!--<div class="iframeContainer">
-				<iframe id="diffusionSim" src="https://eaglesoftworks.github.io/Diffusion/"></iframe>
-			</div>-->
 		</div>
 	</div>
 
