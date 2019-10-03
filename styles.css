@@ -162,7 +162,7 @@ img {
 
 /********** Extra Components **********/
 
-.shadow {
+.shadow { /* Creates a shadow on a div or image */
 	box-shadow: 0 0 25px 2px #000000;
 }
 .caption {
@@ -173,14 +173,18 @@ img {
 	font-style: italic;
 }
 
-.center {
+.center { /* Centers a div */
 	text-align: center;
 	margin-left: auto;
 	margin-right: auto;
 }
 
-.outline {
+.outline { /* Adds an outline to a div */
 	padding: 5px 10px;
 	border: 1px solid var(--accent);
 	border-radius: 10px;
+}
+
+.sublist { /* Adds a left-margin so a sublist sticks out more */
+	margin-left: 20px;
 }
