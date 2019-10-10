@@ -18,7 +18,7 @@
 	<div id="pageBackground">
 		<div id="page">
 			<h2>Diffusion Simulation</h2>
-			
+
 			<p>A <mark>diffusion</mark> simulation reconstructed and improved for the Kennett High School Science Department, as the old flash program couldn't be run.</p>
 
 			<p>The Science Department wanted the new Diffusion Simulation to function like before. To ensure the program would run on computers for a long time (unlike the flash program before), the Diffusion Sim was made as a webpage using <mark>HTML</mark>, <mark>CSS</mark> and <mark>JavaScript</mark>.</p>
@@ -45,21 +45,9 @@
 			</div>
 
 			<p>After recreating the old Diffusion Sim, these requirements weren't too tricky.</p>
-			
-			<hr>
-			<div class="center">
-				<h3>View The Diffusion Simulation</h3>
-
-				<a href="https://eaglesoftworks.github.io/Diffusion/" target="_blank"><button>Visit Website</button></a>
-				
-				<a href="https://github.com/EagleSoftworks/Diffusion" target="_blank"><button>View on GitHub</button></a>
-			</div>
-
-			<!--<div class="iframeContainer">
-				<iframe id="diffusionSim" src="https://eaglesoftworks.github.io/Diffusion/"></iframe>
-			</div>-->
 
 			<hr>
+			<h2>Code Snippets</h2>
 			<h3><mark>ToggleTimer()</mark></h3>
 			<p><mark>toggleTimer</mark> is a function that is used to start and stop the Diffusion Sim. It uses a timer called <mark>canvasDrawing</mark> to call the <mark>drawCanvas()</mark> function every <mark>100ms</mark> and another timer called <mark>timerTicking</mark> to call the <mark>tick()</mark> function every <mark>1000ms</mark>. A <mark>boolean</mark> called <mark>timerOn</mark> is used to track if the simulation is running.</p>
 
@@ -82,7 +70,7 @@
 }</code></pre>
 			
 			<h3><mark>Molecule Class</mark></h3>
-			<p>To keep track of all the molecules in the Diffusion Sim, a molecule <mark>class</mark> was used. Each molecule had to remember which type of molecule it was, as there are two different molecules; the large red ones and the small green ones. To do this, an <mark>enum</mark> is saved in the <mark>Molecule.moleculeType</mark> of each molecule. Because molecules have to move on a canvas, each molecule must also remember its position, so the <mark>Molecule.x</mark> and <mark>Molecule.y</mark> are also saved. these values start with the molecule's starting position, <mark>startX</mark> and <mark>startY</mark>. Each molecule also has two functions, <mark>updateMolecule()</mark> and <mark>draw()</mark>. The <mark>draw()</mark> function simply draws the molecule on the canvas depending on the <mark>Molecule.moleculeType</mark>. The radius of each molecule type is stored outside of the molecule class. <mark>updateMolecule()</mark> is a more complicated function that moves a molecule a random distance in a random direction. This function prevents molecules from going outside the canvas or straight through the wall. If Active Transport is enabled, this function will pull molecules through there. If the ports are open on the wall, this function will allow molecules through the gaps without clipping into the wall.</p>
+			<p>To keep track of all the molecules in the Diffusion Sim, a molecule <mark>class</mark> was used. Each molecule had to remember which type of molecule it was, as there are two different molecules; the large red ones and the small green ones. To do this, an <mark>enum</mark> is saved in the <mark>Molecule.moleculeType</mark> of each molecule. Because molecules have to move on a canvas, each molecule must also remember its position, so the <mark>Molecule.x</mark> and <mark>Molecule.y</mark> are also saved. these values start with the molecule's starting position, <mark>startX</mark> and <mark>startY</mark>. Each molecule also has two functions, <mark>updateMolecule()</mark> and <mark>draw()</mark>. The <mark>draw()</mark> function simply draws the molecule on the canvas depending on the <mark>Molecule.moleculeType</mark>. The radius of each molecule type is stored outside of the molecule class. <mark>updateMolecule()</mark> is a more complicated function that moves a molecule a random distance in a random direction. This function prevents molecules from going outside the canvas or jumping straight through the wall. It also takes into account if active transport is enabled or if there are open ports on the wall. </p>
 
 <pre data-label="Molecule Class"><code class="language-javascript match-braces rainbow-braces line-numbers">class Molecule {
 	constructor(moleculeType, startX, startY) {
@@ -102,6 +90,19 @@
 	}
 }
 </code></pre>
+
+		<hr>
+		<div class="center">
+			<h3>View The Diffusion Simulation</h3>
+
+			<a href="https://eaglesoftworks.github.io/Diffusion/" target="_blank"><button>Visit Website</button></a>
+			
+			<a href="https://github.com/EagleSoftworks/Diffusion" target="_blank"><button>View on GitHub</button></a>
+
+			<!--<div class="iframeContainer">
+				<iframe id="diffusionSim" src="https://eaglesoftworks.github.io/Diffusion/"></iframe>
+			</div>-->
+		</div>
 
 		</div>
 	</div>
