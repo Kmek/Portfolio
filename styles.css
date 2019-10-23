@@ -159,6 +159,10 @@ img {
 	border-radius: 5px;
 }
 
+a {
+	text-decoration: none;
+}
+
 
 /********** Extra Components **********/
 
