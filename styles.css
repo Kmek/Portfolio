@@ -98,6 +98,32 @@ body {
 }
 /* Good model blue: #145087 */
 
+/********** Table Properties **********/
+
+table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+th, td {
+	border-collapse: collapse;
+	padding: 10px;
+}
+
+th {
+	height: 40px;
+	color: var(--accent);
+}
+
+tr {
+	border: 1px solid var(--accent);
+}
+
+tr:hover {
+	background-color: #a8a8a8;
+}
+
+
 /********** Base Components **********/
 h1, h2, h3, h4 {
 	margin: 5px 0;
@@ -162,7 +188,6 @@ img {
 a {
 	text-decoration: none;
 }
-
 
 /********** Extra Components **********/
 
