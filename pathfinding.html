@@ -26,7 +26,9 @@
 			<hr>
 			<h3>The <mark>JS</mark> Pathfinding Simulation</h3>
 			<img class="shadow" src="./media/Pathfinding sim.png" alt="Pathfinding simulation">
-			<p class="caption">Picture of the Pathfinding Sim with the checked tiles highlighted in orange, the visited tiles highlighted in blue, and the shortest path highlighted in green. Open tiles are white and blocked tiles are black.</p>
+			<p class="caption">Picture of the Pathfinding Sim with the shortest path highlighted in green</p>
+
+			<p>The <mark>JavaScript</mark> Pathfinding Sim showed what the robot saw of the maze. The robot did not check random tiles, it checked tiles in the order that the <mark>A* Algorithm</mark> determined. The sim is slowed down, so it can show the progress of the robot. In the sim, white tiles are "open" unchecked tiles, so the robot can move on these. Black tiles are "closed", so they represent obstacles, walls, or any area the robot cannot enter. Orange tiles have been "checked", so each tile's <mark>H cost</mark>, <mark>F cost</mark>, and <mark>G cost</mark> has been calculated. These are also added to a list so they can be visited later. Blue tiles have been "visited", so the robot has added those tiles to a path, based off of the previous tile. Green tiles are the "shortest" path, so the robot has found the end on this path of tiles first, so it is the shortest and most efficient path to the end.</p> CONTINUE HERE
 
 			<hr>
 			<div class="center">
@@ -43,7 +45,14 @@
 
 			<hr>
 			<h3>The Robot</h3>
-			<p>For a physical robot, my friend and I decided to use a V4 VEX Competition Robot. CONTINUE HERE</p>
+			<p>For a physical robot, my friend and I decided to use a V4 VEX Competition Robot. This robot had two motors with Integrated Motor Encoders (IMEs) to measure its position. Because we used a V4 Robot, the <mark>A* Algorithm</mark> had to be rewritten in <mark>C</mark>. Because I wrote the <mark>JavaScript</mark> program, my friend wrote the <mark>C</mark> program.</p>
+
+			<img class="shadow" alt="Picture of the pathfinding VEX robot">
+			<p class="caption">Picture of the pathfinding VEX Robot</p>
+
+			<p>To mimic the grid shown in the <mark>JavaScript</mark> program, we used a ten foot square of plywood. For the lines, black electrical tape was used to make a six by six grid of tiles for the robot.</p> CONTINUE HERE
+
+			<p>The robot was about eight inches wide, just enough to carry its cortex, battery, and motors. Because the robot was so small, it was very lightweight. This caused some driving issues, as the robot would always drift to the left. </p> CONTINUE HERE
 
 		</div>
 	</div>
