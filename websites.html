@@ -21,9 +21,47 @@
 			
 			<hr>
 			<h2>Diffusion Webpage</h2>
+			<p>The Diffusion webpage uses <mark>HTML</mark>, <mark>CSS</mark>, <mark>JavaScript</mark>. CONTINUE HERE</p>
 			
 			<hr>
 			<h2>Pathfinding Webpage</h2>
+			<p>The Pathfinding webpage uses <mark>HTML</mark>, <mark>CSS</mark>, <mark>JavaScript</mark>. Like the Diffusion webpage, this page uses a canvas to make the actual simulation. </p>
+
+			<p>For this page, the <mark>HTML</mark> is pretty sparse. Just the basic components are defined, like the canvas, buttons, and divs. CONTINUE HERE</p>
+
+<pre data-label="Pathfinding index.html"><code class="language-html match-braces rainbow-braces line-numbers"><<!-- -->!DOCTYPE html>
+<<!-- -->html lang="en">
+<<!-- -->head>
+	<<!-- -->meta charset="UTF-8">
+	<<!-- -->link rel="stylesheet" type="text/css" href="styles.css">
+	<<!-- -->link rel="icon" href="http://cdn.onlinewebfonts.com/svg/img_425896.png">
+	<<!-- -->title>Maze<<!-- -->/title>
+<<!-- -->/head>
+<<!-- -->body>
+	<<!-- -->div id="main-page">
+		<<!-- -->div class="row">
+			<<!-- -->button id="btnOpen" onClick="stylus.open()">Open<<!-- -->/button>
+			<<!-- -->button id="btnClose" onClick="stylus.closed()">Closed<<!-- -->/button>
+			<<!-- -->button id="btnStartP" onClick="stylus.start()">Start<<!-- -->/button>
+			<<!-- -->button id="btnEndP" onClick="stylus.end()">End<<!-- -->/button>
+		<<!-- -->/div>
+		<<!-- -->canvas width="649px" height="415px" id="myCanvas"><<!-- -->/canvas> 
+		
+		<<!-- -->div class="row">
+			<<!-- -->button id="btnRun" onClick="run()">Run<<!-- -->/button>
+			<<!-- -->button id="btnEdit" onClick="edit()">Edit<<!-- -->/button>
+			<<!-- -->input id="speedSlider" type="range" min="50" value="75" max="1000">
+			<<!-- -->span id="speedLabel">Speed: <<!-- -->span id="speedSpan">75<<!-- -->/span><<!-- -->/span>
+		<<!-- -->/div>
+		<<!-- -->div class="row">
+			<<!-- -->span id="infoSpan">No selection<<!-- -->/span>
+		<<!-- -->/div>
+	<<!-- -->/div>
+	
+	<<!-- -->script src="./script.js"><<!-- -->/script>
+<<!-- -->/body>
+<<!-- -->/html>
+</code></pre>
 			
 			<hr>
 			<h2>Webpage for a US History Project</h2>
@@ -31,10 +69,39 @@
 			<hr>
 			<h2>Portfolio Webpage</h2>
 			<p>This portfolio website spans several <mark>HTML</mark> pages.</p>
+
 			<p>It uses <a href="https://prismjs.com/" target="_blank"><mark>PrismJS</mark></a> for colorful code blocks.</p>
+
 			<p>This website also uses <a href="https://www.vectary.com/" target="_blank"><mark>Vectary</mark></a> for displaying 3D models within a page.</p>
-			<p>One drawback I found while making this website is that <mark>Chrome</mark> doesn't allow a page to import any external files. I wanted to import each extra <mark>HTML</mark> page into the main "page" <mark><<!-- -->div<!-- -->></mark>, as this would save copying and pasting the same <mark><<!-- -->header<!-- -->></mark> and <mark><<!-- -->footer<!-- -->></mark>.<mark>Chrome</mark> doesn't allow this even if the file is in the same directory. This also means that the <mark>File-Highlight</mark> plugin for <mark>PrismJS</mark> does not work. </p>
-			
+			<p>One drawback I found while making this website is that <mark>Chrome</mark> doesn't allow a page to import any external files. I wanted to import each extra <mark>HTML</mark> page into the main "page" <mark><<!-- -->div<!-- -->></mark>, as this would save copying and pasting the same <mark><<!-- -->header<!-- -->></mark> and <mark><<!-- -->footer<!-- -->></mark>.<mark>Chrome</mark> doesn't allow this even if the file is in the same directory. This also means that the <mark>File-Highlight</mark> plugin for <mark>PrismJS</mark> does not work. This is why each page of the website has to be its own <mark>HTML</mark> file.</p>
+
+			<h3><mark>Portfolio Page Layout</mark></h3>
+			<p>The basic layout for each <mark>HTML</mark> file is CONTINUE HERE</p>
+		
+<pre data-label="Portfolio Page Layout"><code class="language-html match-braces rainbow-braces line-numbers"><<!-- -->body>
+	<<!-- -->div id="header">
+		<<!-- -->a href="./index.html"><<!-- -->h1 id="title">Kate Keefe's Portfolio</<!-- -->h1><<!-- -->/a>
+	<<!-- -->/div>
+
+	<<!-- -->div id="pageBackground">
+		<<!-- -->div id="page">
+
+			<<!-- -->!-- Contents of the page go here -->
+
+		<<!-- -->/div>
+	<<!-- -->/div>
+
+	<<!-- -->div id="footer">
+		<<!-- -->span id="footerText">Portfolio & website made by Kate Keefe<<!-- -->/span>
+		<<!-- -->a href="https://github.com/Kmek/Portfolio" target="_blank"><<!-- -->button id="githubBtn">View on GitHub<<!-- -->/button><<!-- -->/a>
+	<<!-- -->/div>
+	
+	<<!-- -->script src="prism/prism.js"><<!-- -->/script>
+	<<!-- -->script src="script.js"><<!-- -->/script>
+<<!-- -->/body>
+</code></pre>			
+		
+	
 		</div>
 	</div>
 
