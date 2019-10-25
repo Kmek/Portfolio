@@ -17,18 +17,20 @@
 
 	<div id="pageBackground">
 		<div id="page">
-			<h2>Pathfinding</h2>
+			<h2>Science Fair 2019 - Pathfinding</h2>
 			<p>For the Mount Washington Valley Science Fair, my friend and I decided to create a robot that could find its way through a maze. This robot would have a start point and an end point. To make it easier, this robot would know what the maze looked like beforehand. </p>
-			<h4>A* Algorithm</h4>
-			<p>After some research, we decided thge robot should use an <mark>A* Algorithm</mark> to find its way through the maze. This would allow the robot to find the shortest and therefore most efficient path through the maze. An <mark>A* Algorithm</mark> measures three things while calculating the shortest path: the <mark>H cost</mark>, the <mark>F cost</mark>, and the <mark>G cost</mark>. These three costs are calculated for each tile that is visited. The <mark>G cost</mark> is the number of tiles it took to get to the given tile. The <mark>H cost</mark> is the estimated number of tiles it will take to get to the end. The <mark>F cost</mark> is the sum of the <mark>G cost</mark> and the <mark>H cost</mark>. The shortest path to the end would be the path along the lowest <mark>F costs</mark>.</p>
+			<h3>A* Algorithm</h3>
+			<p>After some research, we decided the robot should use an <mark>A* Algorithm</mark> to find its way through the maze. This would allow the robot to find the shortest and therefore most efficient path through the maze. An <mark>A* Algorithm</mark> measures three things while calculating the shortest path: the <mark>H cost</mark>, the <mark>F cost</mark>, and the <mark>G cost</mark>. These three costs are calculated for each tile that is visited. The <mark>G cost</mark> is the number of tiles it took to get to the given tile. The <mark>H cost</mark> is the estimated number of tiles it will take to get to the end. The <mark>F cost</mark> is the sum of the <mark>G cost</mark> and the <mark>H cost</mark>. The shortest path to the end would be the path along the lowest <mark>F costs</mark>.</p>
 			<p></p>
 
 			<hr>
-			<h3>The <mark>JS</mark> Pathfinding Simulation</h3>
+			<h2>The <mark>JS</mark> Pathfinding Simulation</h2>
 			<img class="shadow" src="./media/Pathfinding sim.png" alt="Pathfinding simulation">
 			<p class="caption">Picture of the Pathfinding Sim with the shortest path highlighted in green</p>
 
-			<p>The <mark>JavaScript</mark> Pathfinding Sim showed what the robot saw of the maze. The robot did not check random tiles, it checked tiles in the order that the <mark>A* Algorithm</mark> determined. The sim is slowed down, so it can show the progress of the robot. In the sim, white tiles are "open" unchecked tiles, so the robot can move on these. Black tiles are "closed", so they represent obstacles, walls, or any area the robot cannot enter. Orange tiles have been "checked", so each tile's <mark>H cost</mark>, <mark>F cost</mark>, and <mark>G cost</mark> has been calculated. These are also added to a list so they can be visited later. Blue tiles have been "visited", so the robot has added those tiles to a path, based off of the previous tile. Green tiles are the "shortest" path, so the robot has found the end on this path of tiles first, so it is the shortest and most efficient path to the end.</p> CONTINUE HERE
+			<p>The <mark>JavaScript</mark> Pathfinding Sim showed what the robot saw of the maze. The robot did not check random tiles, it checked tiles in the order that the <mark>A* Algorithm</mark> determined. The sim is slowed down, so it can show the progress of the robot. In the sim, white tiles are "open" unchecked tiles, so the robot can move on these. Black tiles are "closed", so they represent obstacles, walls, or any area the robot cannot enter. Orange tiles have been "checked", so each tile's <mark>H cost</mark>, <mark>F cost</mark>, and <mark>G cost</mark> has been calculated. These are also added to a list so they can be visited later. Blue tiles have been "visited", so the robot has added those tiles to a path, based off of the previous tile. Green tiles are the "shortest" path, so the robot has found the end on this path of tiles first, so it is the shortest and most efficient path to the end.</p> 
+			
+			<p>This simulation is also interactive. The map can be clicked to design many different mazes. At the top are the base tile types which can be placed onto the grid. Clicking one results in the user's "stylus" changing to that type of tile. But, only one start and one end tile are allowed on the grid at one time. This allows the <mark>A* Algorithm</mark> to be tested and displayed in more than one setting. Once the simulation has been run, each tiles can be clicked to view its <mark>status</mark>, <mark>H cost</mark>, <mark>F cost</mark>, and <mark>G cost</mark>, all of which the robot takes into account when determining the shortest path. There is also a slider for the speed of the simulation. The simulation is slowed down, so users can see what the robot sees, rather than only seeing the robot's chosen path. The slider determines how fast the robot moves between tiles, in milliseconds.</p>
 
 			<hr>
 			<div class="center">
@@ -40,19 +42,21 @@
 			</div>
 
 			<hr>
-			<h3><mark>JS</mark> Code Snippets</h3>
+			<h2><mark>JS</mark> Code Snippets</h2>
+
+			<h3><mark>Block Class</mark></h3>
 			<p>CONTINUE HERE</p>
 
 			<hr>
-			<h3>The Robot</h3>
+			<h2>The Robot</h2>
 			<p>For a physical robot, my friend and I decided to use a V4 VEX Competition Robot. This robot had two motors with Integrated Motor Encoders (IMEs) to measure its position. Because we used a V4 Robot, the <mark>A* Algorithm</mark> had to be rewritten in <mark>C</mark>. Because I wrote the <mark>JavaScript</mark> program, my friend wrote the <mark>C</mark> program.</p>
 
 			<img class="shadow" alt="Picture of the pathfinding VEX robot">
 			<p class="caption">Picture of the pathfinding VEX Robot</p>
 
-			<p>To mimic the grid shown in the <mark>JavaScript</mark> program, we used a ten foot square of plywood. For the lines, black electrical tape was used to make a six by six grid of tiles for the robot.</p> CONTINUE HERE
+			<p>To mimic the grid shown in the <mark>JavaScript</mark> program, we used a ten foot square of plywood. For the lines, black electrical tape was used to make a six by six grid of tiles for the robot. This made a smaller map than what was shown in the <mark>JavaScript</mark> simulation, but this helped show how quickly a path was calculated.</p>
 
-			<p>The robot was about eight inches wide, just enough to carry its cortex, battery, and motors. Because the robot was so small, it was very lightweight. This caused some driving issues, as the robot would always drift to the left. </p> CONTINUE HERE
+			<p>The robot itself was about eight inches wide, just enough to carry its cortex, battery, and motors. Because the robot was so small, it was very lightweight. This caused some driving issues, as the robot would always drift to the left. When a robot cannot drive consistently in a straight line, it doesn't follow the planned out autonomous, so the robot ends up in the wrong location at the end. To fix this, line trackers were attached on either side of the robot. These looked at the ground and measured light and dark colors, such as the plywood and the black electrical tape. When the robot saw the black tape on one side, that side was given a little more power. This resulted in the robot turning away slightly from the line, rather than drifting right over it.</p>
 
 		</div>
 	</div>
