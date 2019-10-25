@@ -45,7 +45,138 @@
 			<h2><mark>JS</mark> Code Snippets</h2>
 
 			<h3><mark>Block Class</mark></h3>
-			<p>CONTINUE HERE</p>
+			<p>To make it easier to keep track of tiles/blocks, a <mark>Block Class</mark> is used. Each tile/block stores its own (x, y) location in blocks, <mark>this.blockX</mark> and <mark>this.blockY</mark>, as well as pixels, <mark>this.x</mark> and <mark>this.y</mark>. Helpful functions like <mark>co()</mark> and <mark>coToBlock()</mark> are used to easily convert between the two. Each tile/block also stores the methods <mark>draw()</mark>, <mark>erase()</mark>, <mark>getGCost()</mark>, <mark>getHCost()</mark>, and <mark>getFCost()</mark>. <mark>draw()</mark> draws the tile based off of the tile's <mark>style</mark>. <mark>erase()</mark> erases the current tile. <mark>getGCost()</mark>, <mark>getHCost()</mark>, and <mark>getFCost()</mark> all calculate their corresponding costs for the tile. Each block also stores <mark>this.path</mark>, which is the path to get to the tile from the start. Whichever tile the robot uses to reach the end uses this variable to highlight the shortest path.</p>
+
+<pre data-label="Block Class"><code class="language-javascript match-braces rainbow-braces line-numbers">class Block {
+	constructor(blockX, blockY, style) {
+		this.blockX = blockX;
+		this.blockY = blockY;
+		this.x = co(blockX);
+		this.y = co(blockY);
+		this.style = style;
+		this.path = [];
+		// Uncalculated values are -1, an unobtainable number
+		this.gCost = -1;
+		this.hCost = -1;
+		this.fCost = -1;
+	}
+	
+	draw() {
+		this.erase();
+		if (this.style === "open") {
+			draw.open(this.x, this.y);
+		}
+		else if (this.style === "closed") {
+			draw.closed(this.x, this.y);
+		}
+		else if (this.style === "start") {
+			draw.start(this.x, this.y);
+			start = true;
+			startCo[0] = coToBlock(this.x);
+			startCo[1] = coToBlock(this.y);
+		}
+		else if (this.style === "end") {
+			draw.end(this.x, this.y);
+			end = true;
+			endCo[0] = coToBlock(this.x);
+			endCo[1] = coToBlock(this.y);
+		}
+		else if (this.style === "visited") {
+			draw.visited(this.x, this.y);
+		}
+		else if (this.style === "checked") {
+			draw.checked(this.x, this.y);
+		}
+		else if (this.style === "shortest") {
+			draw.shortest(this.x, this.y);
+		}
+	}
+	
+	erase() {
+		draw.erase(this.x, this.y);
+	}
+
+	// Distance from start
+	getGCost() {
+		// This is the shortest count of blocks from the start
+		// Saves the block coordinates in an array
+		if (this.gCost < 0) {
+			// getGCost must only be called when robot is on the block
+			if (this.path.length === 0) {
+				this.path = checker.center().path.slice(0);
+				this.path.push(this.blockX);
+				this.path.push(this.blockY);
+			}
+			
+			this.gCost = Math.floor((this.path.length - 1) / 2);
+		}
+		return (this.gCost);
+	}
+	
+	// Distance from end
+	getHCost() {
+		// Estimation by pythagorean theorem
+		if (this.hCost < 0 ) {
+			let a = Math.pow(Math.abs(endCo[0] - coToBlock(this.x)), 2);
+			let b = Math.pow(Math.abs(endCo[1] - coToBlock(this.y)), 2);
+			this.hCost = Math.round((Math.sqrt(a+b)) * 100) / 100;
+		}
+		return(this.hCost);
+	}
+	
+	// Both G-Cost and H-Cost
+	getFCost() {
+		if (this.fCost < 0) {
+			let costs = this.getGCost() + this.getHCost();
+			this.fCost = Math.round(costs * 100) / 100;
+		}
+		return (this.fCost);
+	}
+}
+</code></pre>
+
+<h3><mark>checkAndMoveSimplified()</mark></h3>
+
+<p>The <mark>checkAndMoveSimplified()</mark> function checks through the tiles until it finds the end tile or there are no more tiles to check. In doing so, this function also moves the checker, represented by a purple block, around the grid to show what tile the code is currently checking. This function is held in a <mark>Checker Class</mark> which has several other useful methods. In this function, the first method called is <mark>lightcheck()</mark>, which checks the four tiles surrounding the current tile, calculating each one's <mark>H cost</mark>, <mark>F cost</mark>, and <mark>G cost</mark>. These tiles are added to an ordered array called <mark>openPaths</mark>, which is organized by <mark>fCost</mark>. Once a tile from the <mark>openPath</mark> array has been visited, it is removed from the array. This allows the robot to progress in the best direction towards the end tile. Upon finding the end tile, the robot highlights the shortest path in green.</p>
+
+<pre data-label="checkAndMoveSimplified()"><code class="language-javascript match-braces rainbow-braces line-numbers">checkAndMoveSimplified(){
+	// If at a dead end
+	if (this.openPaths.length === 0 && this.center().style !== "start") {
+		// One last check
+		this.lightCheck();
+		if (this.openPaths.length === 0) {
+			print("All possible paths explored, no solution found");
+			this.stopChecking();
+		}
+	}
+	else if (this.blockX === endCo[0] && this.blockY === endCo[1]) {
+		print("Found the end!");
+		// Highlights the path
+		for (let i = 1; i < (this.center().path.length - 2); i+= 2) {
+			let tempX = i - 1;
+			let tempY = i;
+			updateBlock(this.center().path[tempX], this.center().path[tempY], "shortest");
+		}
+		this.stopChecking();
+	}
+	else {
+		// Mark blocks before moving
+		this.lightCheck();
+		this.center().draw();
+		// Change checker xy blocks
+		this.blockX = this.openPaths[0];
+		this.blockY = this.openPaths[1];
+		// Remove block from open path arrays
+		this.fCosts.splice(0, 1);
+		this.openPaths.splice(0, 2);
+		// Move
+		if (this.center().style !== "end") {
+			updateBlock(this.blockX, this.blockY, "visited");
+		}
+		this.draw();
+	}
+	//console.log(checker.blockX, checker.blockY, this.openPaths);
+}</code></pre>
 
 			<hr>
 			<h2>The Robot</h2>
