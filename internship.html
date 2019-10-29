@@ -18,19 +18,28 @@
 	<div id="pageBackground">
 		<div id="page">
 			<h2>Internship At The Echo Group</h2>
-			<p>In the summer of 2019, I worked as an intern at The Echo Group, a local software company in Conway, New Hampshire.</p>
+			<p>In the summer of 2019, I worked as an intern at The Echo Group, a software company in Conway, NH.</p>
 
-			<div class="center">
+			<div class="center outline" style="margin-bottom:5px;">
+				<h4>Visit The Echo Group Online</h4>
 				<a href="https://www.echobh.com/" target="_blank"><button>The Echo Group</button></a>
 			</div>
 
-			(WIP) 
-			topics:
-			- docker
-			- WinForms with powershell (code snippet?)
-			- installer for Echo Offline Forms
-			- Formal PRs
-			- Documentation site
+			<h3><mark>PowerShell</mark> Scripts</h3>
+
+			<p>One of the main languages I worked with was <mark>PowerShell</mark>. <mark>PowerShell</mark> is a language that runs scripts on Windows computers. Another intern and I worked on streamlining the developer setup process by creating scripts to set up a developer environment on a new computer. This included using <mark>Chocolatey</mark>, a package manager for Windows, to download various useful programs and applications. At certain times, the current user of the computer had to be automatically added into a user group. At the end of the summer, these <mark>PowerShell</mark> scripts cut over five hours of installation down to just about one hour, depending on which programs were selected to download.</p> 
+
+			<p>The scripts didn't just help with installation, they also made it easier to start up certain Echo products for testing. One such product required five programs to run with <mark>Java</mark> and a local server to run for communication. <mark>Docker</mark> was used to run a local <mark>SQL Server</mark> instance as a database for testing. Because of this, several <mark>SQL</mark> scripts had to be run through <mark>PowerShell</mark> using the <mark>Invoke-SqlCmd</mark> command. Another option was to run the five programs from <mark>Docker</mark> images. This was tricky as the same file that ran on Linux without issue wouldn't run properly on Windows because <mark>localhost</mark> referenced the Linux virual machine <mark>Docker</mark> ran inside instead of the computer itself, but it worked eventually.</p>
+
+			<h3>WinForms with <mark>PowerShell</mark></h3>
+			<p>CONTINUE HERE include pictures</p>
+
+			<h3>Formal Pull Requests</h3>
+			<p>CONTINUE HERE</p>
+
+			<h3>Documentation Site</h3>
+			<p>Because I only worked during the summer, documentation was very important. Other developers were going to need to know how to maintain the various <mark>PowerShell</mark> scripts when I went back to school. The Echo Group used an internal documentation website that any developer could add pages to or edit existing pages. For easy formatting, these pages were written in <mark>Markdown</mark>. </p>
+
 
 
 		</div>
