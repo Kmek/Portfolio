@@ -76,13 +76,24 @@
 
 	<<!-- -->div id="footer">
 		<<!-- -->span id="footerText">Portfolio & website made by Kate Keefe<<!-- -->/span>
-		<<!-- -->a href="https://github.com/Kmek/Portfolio" target="_blank"><<!-- -->button id="githubBtn">View on GitHub<<!-- -->/button><<!-- -->/a>
+		<<!-- -->a href="https://github.com/Kmek/Portfolio" target="_blank">
+			<<!-- -->button id="githubBtn">View on GitHub<<!-- -->/button>
+		<<!-- -->/a>
 	<<!-- -->/div>
 	
 	<<!-- -->script src="prism/prism.js"><<!-- -->/script>
 <<!-- -->/body>
-</code></pre>			
+</code></pre>		
+
+			<h3>Totalling Hours In <mark>hours.html</mark></h3>
+			<p>On the volunteering hours page, there's a big table with a list of hours. To make it easy to add more hours, <mark>JavaScript</mark> adds up all of the hours in the table. This total is counted with a simple <mark>for</mark> loop and displayed in the cell with the <mark>id</mark> "tableTotal".</p>
 		
+<pre data-label="hours.html script">
+<code class="language-javascript match-braces rainbow-braces line-numbers">var table = document.getElementById("tableHours")
+let total = document.getElementById("tableTotal")
+for (let i = 1; i < (table.rows.length - 1); i++) 
+	total.innerHTML = (Number(total.innerHTML) + Number(table.rows[i].cells[2].innerHTML))
+</code></pre>
 	
 		</div>
 	</div>
