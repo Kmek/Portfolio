@@ -29,18 +29,84 @@
 
 			<p>One of the main languages I worked with was <mark>PowerShell</mark>. <mark>PowerShell</mark> is a language that runs scripts on Windows computers. Another intern and I worked on streamlining the developer setup process by creating scripts to set up a developer environment on a new computer. This included using <mark>Chocolatey</mark>, a package manager for Windows, to download various useful programs and applications. At certain times, the current user of the computer had to be automatically added into a user group. At the end of the summer, these <mark>PowerShell</mark> scripts cut over five hours of installation down to just about one hour, depending on which programs were selected to download.</p> 
 
-			<p>The scripts didn't just help with installation, they also made it easier to start up certain Echo products for testing. One such product required five programs to run with <mark>Java</mark> and a local server to run for communication. <mark>Docker</mark> was used to run a local <mark>SQL Server</mark> instance as a database for testing. Because of this, several <mark>SQL</mark> scripts had to be run through <mark>PowerShell</mark> using the <mark>Invoke-SqlCmd</mark> command. Another option was to run the five programs from <mark>Docker</mark> images. This was tricky as the same file that ran on Linux without issue wouldn't run properly on Windows because <mark>localhost</mark> referenced the Linux virual machine <mark>Docker</mark> ran inside instead of the computer itself, but it worked eventually.</p>
+			<p>The scripts didn't just help with installation, they also made it easier to start up certain Echo products for testing. One such product required five programs to run with <mark>Java</mark> and a local server to run for communication. <mark>Docker</mark> was used to run a local <mark>SQL Server</mark> instance as a database for testing. Because of this, several <mark>SQL</mark> scripts had to be run through <mark>PowerShell</mark> using the <mark>Invoke-SqlCmd</mark> command. Another option was to run the five programs from <mark>Docker</mark> images. This was tricky as the same file that ran on Linux without issue wouldn't run properly on Windows because <mark>localhost</mark> referenced the Linux virtual machine <mark>Docker</mark> ran inside instead of the computer itself, but it worked eventually.</p>
 
 			<h3>WinForms with <mark>PowerShell</mark></h3>
-			<p>CONTINUE HERE include pictures</p>
+			<p>Because one set of scripts was going to go to customers, it needed to look nice. Since some people are scared of raw terminals, such as the one <mark>PowerShell</mark> is run within, I worked on adding Windows Form to make the scripts more user-friendly. This is easy enough with adding the <mark>System.Windows.Forms</mark> and <mark>System.Drawing</mark> <mark>PowerShell</mark> assemblies, but creating a form by hand takes gross walls of text. </p>
 
-			<h3>Formal Pull Requests</h3>
+<pre data-label="Creating A Custom Input Box">
+<code class="language-powershell match-braces rainbow-braces line-numbers"># Creating A Custom Input Box (from the Microsoft Docs)
+# https://docs.microsoft.com/en-us/powershell/scripting/samples/creating-a-custom-input-box?view=powershell-6
+Add-Type -AssemblyName System.Windows.Forms
+Add-Type -AssemblyName System.Drawing
+
+$form = New-Object System.Windows.Forms.Form
+$form.Text = 'Data Entry Form'
+$form.Size = New-Object System.Drawing.Size(300,200)
+$form.StartPosition = 'CenterScreen'
+
+$OKButton = New-Object System.Windows.Forms.Button
+$OKButton.Location = New-Object System.Drawing.Point(75,120)
+$OKButton.Size = New-Object System.Drawing.Size(75,23)
+$OKButton.Text = 'OK'
+$OKButton.DialogResult = [System.Windows.Forms.DialogResult]::OK
+$form.AcceptButton = $OKButton
+$form.Controls.Add($OKButton)
+
+$CancelButton = New-Object System.Windows.Forms.Button
+$CancelButton.Location = New-Object System.Drawing.Point(150,120)
+$CancelButton.Size = New-Object System.Drawing.Size(75,23)
+$CancelButton.Text = 'Cancel'
+$CancelButton.DialogResult = [System.Windows.Forms.DialogResult]::Cancel
+$form.CancelButton = $CancelButton
+$form.Controls.Add($CancelButton)
+
+$label = New-Object System.Windows.Forms.Label
+$label.Location = New-Object System.Drawing.Point(10,20)
+$label.Size = New-Object System.Drawing.Size(280,20)
+$label.Text = 'Please enter the information in the space below:'
+$form.Controls.Add($label)
+
+$textBox = New-Object System.Windows.Forms.TextBox
+$textBox.Location = New-Object System.Drawing.Point(10,40)
+$textBox.Size = New-Object System.Drawing.Size(260,20)
+$form.Controls.Add($textBox)
+
+$form.Topmost = $true
+
+$form.Add_Shown({$textBox.Select()})
+$result = $form.ShowDialog()
+</code></pre>
+
+			<p>The above code comes straight from the <a href="https://docs.microsoft.com/en-us/powershell/scripting/samples/creating-a-custom-input-box?view=powershell-6" target="_blank">Microsoft Docs</a>, and results in a small graphical Windows Form with a textbox, a label, a cancel button, and an input button. To cut down on all of this text, I made my very own <mark>PowerShell</mark> Custom Forms library, complete with its very own <mark>custom_forms.md</mark> cheat sheet. In this Custom Forms module, each added component is reduced to about one line of code. </p>
+
+<pre data-label="Creating A Custom Input Box with Custom_Forms.psm1">
+<code class="language-powershell match-braces rainbow-braces line-numbers"># Creating A Custom Input Box (from the Microsoft Docs) Revised With Custom_Forms.psm1
+import-module $PSScriptRoot\custom_forms.psm1
+
+$Form = makeForm -W 300 -H 200 -Title "Data Entry Form" -Topmost -StartPosition "CenterScreen"
+
+makeFormButton -Component ([ref]$Form) -X 75 -Y 120 -W 75 -H 23 -Name "OKButton" -Text "OK" -Type "Ok"
+$Form.AcceptButton = $Form.controls["OKButton"];
+
+makeFormButton -Component ([ref]$Form) -X 150 -Y 120 -W 75 -H 23 -Name "CancelButton" -Text "Cancel" -Type "Cancel"
+$Form.CancelButton = $Form.controls["CancelButton"];
+
+makeFormLabel -Component ([ref]$Form) -X 10 -Y 20 -W 280 -H 20 -Name "label" -Text "Please enter the information in the space below:"
+
+makeFormTextbox -Component ([ref]$Form) -X 10 -Y 40 -W 260 -H 20 -Name "textbox"
+$Form.Add_Shown({$This.controls["textbox"].Select()})
+
+$result = $Form.ShowDialog()
+</code></pre>
+
+			<p>The above code creates the same form as before but with less than half the lines of code. The two needed assemblies are added automatically when using the <mark>custom_forms.psm1</mark> module. Components are also added automatically to the controls of the passed in reference form (or component).</p>
+
+			<h3>Formal Pull Requests & Source Control</h3>
 			<p>CONTINUE HERE</p>
 
 			<h3>Documentation Site</h3>
 			<p>Because I only worked during the summer, documentation was very important. Other developers were going to need to know how to maintain the various <mark>PowerShell</mark> scripts when I went back to school. The Echo Group used an internal documentation website that any developer could add pages to or edit existing pages. For easy formatting, these pages were written in <mark>Markdown</mark>. </p>
-
-
 
 		</div>
 	</div>
