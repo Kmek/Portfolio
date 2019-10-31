@@ -60,33 +60,124 @@ var dataset1 = [
     }
 ]
 
-var dataset2 = []
+var dataset2 = [
+    {
+        event: "Trinity High School Granite State VRC Tournament",
+        link: "https://www.robotevents.com/robot-competitions/vex-robotics-competition/RE-VRC-17-3344.html",
+        date: "10/22/2017",
+        rank: "8",
+        award: "Judges Award"
+    }, {
+        event: "Mount Washington VEX Qualifier",
+        link: "https://www.robotevents.com/robot-competitions/vex-robotics-competition/RE-VRC-17-2598.html",
+        date: "11/4/2017",
+        rank: "2",
+        award: "Excellence Award & Tournament Champion"
+    }, {
+        event: "New Hampshire Holiday Classic VRC Tournament",
+        link: "https://www.robotevents.com/robot-competitions/vex-robotics-competition/RE-VRC-17-3110.html",
+        date: "12/2/2017",
+        rank: "3",
+        award: "Innovate Award & Inspire Award & Tournament Finalist"
+    }, {
+        event: "VRC Frostbite Qualifier",
+        link: "https://www.robotevents.com/robot-competitions/vex-robotics-competition/RE-VRC-17-2839.html",
+        date: "12/9/2017",
+        rank: "6",
+        award: "n/a"
+    }, {
+        event: "ConVal Late winter",
+        link: "https://www.robotevents.com/robot-competitions/vex-robotics-competition/RE-VRC-17-4299.html",
+        date: "2/3/2018",
+        rank: "9",
+        award: "Tournament Semifinalist"
+    }, {
+        event: "NH/VT 2018 VRC State Championship",
+        link: "https://www.robotevents.com/robot-competitions/vex-robotics-competition/RE-VRC-17-4269.html",
+        date: "2/17/2018",
+        rank: "5",
+        award: "Excellence Award"
+    }, {
+        event: "2018 VEX Robotics World Championship - VRC High School - Engineering Division",
+        link: "https://www.robotevents.com/robot-competitions/vex-robotics-competition/RE-VRC-17-3805.html",
+        date: "4/25/2018 through 4/28/2018",
+        rank: "84",
+        award: "Think Award"
+    }
+]
 
-var dataset3 = []
+var dataset3 = [
+    {
+        event: "Trinity High School Granite State VRC Tournament",
+        link: "https://www.robotevents.com/robot-competitions/vex-robotics-competition/RE-VRC-18-6278.html",
+        date: "10/20/2018",
+        rank: "21",
+        award: "Think Award"
+    }, {
+        event: "Mount Washington Valley VEX Tournament",
+        link: "https://www.robotevents.com/robot-competitions/vex-robotics-competition/RE-VRC-18-5526.html",
+        date: "11/3/2018",
+        rank: "9",
+        award: "Design Award"
+    }, {
+        event: "New Hampshire Holiday Classic VRC Tournament",
+        link: "https://www.robotevents.com/robot-competitions/vex-robotics-competition/RE-VRC-18-5069.html",
+        date: "12/1/2018",
+        rank: "21",
+        award: "Design Award"
+    }, {
+        event: "Frostbite Qualifier",
+        link: "https://www.robotevents.com/robot-competitions/vex-robotics-competition/RE-VRC-18-5209.html",
+        date: "12/15/2018",
+        rank: "7",
+        award: "n/a"
+    }, {
+        event: "Mid Winter Classic",
+        link: "https://www.robotevents.com/robot-competitions/vex-robotics-competition/RE-VRC-18-5456.html",
+        date: "1/19/2019",
+        rank: "5",
+        award: "Excellence Award"
+    }, {
+        event: "NH/VT VRC State Championship",
+        link: "https://www.robotevents.com/robot-competitions/vex-robotics-competition/RE-VRC-18-7624.html",
+        date: "2/16/2019",
+        rank: "12",
+        award: "Design Award"
+    }, {
+        event: "2019 VEX Robotics World Championship - VRC High School Division - Science Division",
+        link: "https://www.robotevents.com/robot-competitions/vex-robotics-competition/RE-VRC-18-6082.html",
+        date: "04/24/2019 through 04/27/2019",
+        rank: "6",
+        award: "Tournament Quarterfinalist"
+    }
+]
 
 const datasets = [dataset1, dataset2, dataset3]
 
 // ******************** Fill Tables ******************** //
 
-let order = []
-for (let i = 0; i < 4; i++)
-    order.push((tables[0].rows[0].cells[i].innerHTML).toLowerCase())
+for (let t = 0; t < tables.length; t++) {
 
-for (let i = 0; i < datasets[0].length; i++) {
-    let newRow = tables[0].insertRow(i + 1)
+    let order = []
+    for (let i = 0; i < 4; i++)
+        order.push((tables[t].rows[0].cells[i].innerHTML).toLowerCase())
 
-    for (let t = 0; t < 4; t++) {
-        if (order[t] == "event") {
-            let link = document.createElement("a")
-            link.setAttribute('href', (datasets[0][i].link))
-            link.setAttribute('target', "_blank")
-            newRow.insertCell(t).appendChild(link).innerHTML = (datasets[0][i].event)
-        } else if (order[t] == "rank") {
-            newRow.insertCell(t).innerHTML = (datasets[0][i].rank)
-        } else if (order[t] == "date") {
-            newRow.insertCell(t).innerHTML = (datasets[0][i].date)
-        } else if (order[t] == "award") {
-            newRow.insertCell(t).innerHTML = (datasets[0][i].award)
+    for (let i = 0; i < datasets[t].length; i++) {
+        let newRow = tables[t].insertRow(i + 1)
+
+        for (let c = 0; c < 4; c++) {
+            if (order[c] == "event") {
+                let link = document.createElement("a")
+                link.setAttribute('href', (datasets[t][i].link))
+                link.setAttribute('target', "_blank")
+                newRow.insertCell(c).appendChild(link).innerHTML = (datasets[t][i].event)
+            } else if (order[c] == "rank") {
+                newRow.insertCell(c).innerHTML = (datasets[t][i].rank)
+            } else if (order[c] == "date") {
+                newRow.insertCell(c).innerHTML = (datasets[t][i].date)
+            } else if (order[c] == "award") {
+                newRow.insertCell(c).innerHTML = (datasets[t][i].award)
+            }
         }
     }
 }
