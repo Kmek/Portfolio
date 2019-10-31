@@ -144,7 +144,7 @@ var dataset3 = [
         rank: "12",
         award: "Design Award"
     }, {
-        event: "2019 VEX Robotics World Championship - VRC High School Division - Science Division",
+        event: "2019 VEX Robotics World Championship - VRC High School - Science Division",
         link: "https://www.robotevents.com/robot-competitions/vex-robotics-competition/RE-VRC-18-6082.html",
         date: "04/24/2019 through 04/27/2019",
         rank: "6",
