@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Portfolio | Vector Solver</title>
+	<meta name="author" content="Kate Keefe">
+	<meta name="description" content="Kate Keefe's GitHub Portfolio">
+	<link rel="icon" href="media/GitHub-Mark-64px.png">
+
+	<link href="prism/prism.css" rel="stylesheet"/>
+	<link href="styles.css" rel="stylesheet"/>	
+</head>
+<body>
+	
+	<div id="header">
+		<a href="./index.html"><h1 id="title">Kate Keefe's Portfolio</h1></a>
+	</div>
+
+	<div id="pageBackground">
+		<div id="page">
+            <h2>Vectors</h2>
+            
+            <p>In my physics class senior year, we are learning about vectors. Vectors are commonly used to measure things like displacement, velocity, acceleration, and force. Multiple vectors can be applied to one object, so they are added together to form a resulting vector. A vector is made up of a <mark>magnitude</mark>, which is the length of the vector, and an angle <mark>degree</mark>. To be added together, vectors can be turned into <mark>X</mark> components and <mark>Y</mark> components, representing the (<mark>X</mark>,<mark>Y</mark>) coordinate at the end of the vector arrow. These points can be added together to determine the resulting vector.</p>
+
+            <p>To make this a little easier to understand, I created a webpage that converts and adds vectors together. These vectors are displayed on a graph on a square canvas to show how they all compare to one another. The webpage was made using <mark>HTML</mark>, <mark>CSS</mark>, and <mark>JavaScript</mark> because I have some previous experience with the canvas component, which can be seen in the Diffusion Simulation and the Pathfinding Simulation.</p>
+
+            <hr>
+            <h2>The Vector Solver Webpage</h2>
+
+            <img class="shadow" src="./media/vectorsolver.PNG" alt="Screenshot of the Vector Solver webpage with three arrows on the graph representing three vectors">
+            <p class="caption">Screenshot of the Vector Solver with three arrows on the graph</p>
+            
+            <p>On the Vector Solver, vectors can be created with the <mark>+ Add Vector</mark> button. Either the <mark>magnitude</mark> and <mark>degree</mark> or the (<mark>X</mark>,<mark>Y</mark>) coordinate for the vector can be entered in the text input boxes provided, the other form will be automatically calculated. From there, the resulting & equilibrium vectors will be automatically calculated and displayed in the two boxes below the graph. On the graph, each vector will be displayed as an arrow of its corresponding color, which can be changed with the color picker button on the left of the vector's row. The resulting vector is drawn as an arrow with a dashed line, to differentiate it from the other vectors. Each vector can also be disabled with a checkbox on the right of each row. This prevents the arrow from being calculated into the resulting vector and drawn on the graph. At the bottom left corner of the page is a button that determines the number of decimals numbers are rounded to. This ranges from <mark>0</mark> to <mark>0.0000</mark>, but by default it is set at <mark>0.00</mark>.</p>
+
+            <hr>
+			<div class="center outline">
+				<h3>View The Vector Solver</h3>
+
+				<a href="https://kmek.github.io/VectorSolver/" target="_blank"><button>Visit Website</button></a>
+				
+				<a href="https://github.com/Kmek/VectorSolver" target="_blank"><button>View on GitHub</button></a>
+            </div>
+            
+            <!-- <hr>
+            <h2>Code Snippets</h2> -->
+
+
+		</div>
+	</div>
+
+	<div id="footer">
+		<span id="footerText">Portfolio & website made by Kate Keefe</span>
+		<a href="https://github.com/Kmek/Portfolio" target="_blank"><button id="githubBtn">View on GitHub</button></a>
+	</div>
+	
+	<script src="prism/prism.js"></script>
+</body>
+</html>
