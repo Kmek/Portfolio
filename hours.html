@@ -11,7 +11,7 @@
 <body>
 	
 	<div id="header">
-		<a href="./index.html"><h1 id="title">Kate Keefe's Portfolio</h1></a>
+		<h1 id="title">Kate Keefe's Portfolio</h1>
 	</div>
 
 	<div id="pageBackground">
@@ -230,8 +230,13 @@
 		<span id="footerText">Portfolio & website made by Kate Keefe</span>
 		<a href="https://github.com/Kmek/Portfolio" target="_blank"><button id="githubBtn">View on GitHub</button></a>
 	</div>
+
+	<div id="navBtn"></div>
+	<link rel="stylesheet" type="text/css" href="navigation.css">
+	<script src="navigation.js"></script>
 	
 	<script type="text/javascript">
+		// For calculating the total number of hours
 		var table = document.getElementById("tableHours")
 		let total = document.getElementById("tableTotal")
 		for (let i = 1; i < (table.rows.length - 1); i++) 
