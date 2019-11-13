@@ -14,6 +14,8 @@ This portfolio can be viewed at kmek.github.io/Portfolio/
 * `grabcad.html` - a page about my 3D models
 * `awards.html` - a page of awards I have received
 * `hours.html` - a page of my volunteer hours
+* `navigation.js` - `JavaScript` for the navigation dropdown on each page
+* `navigation.css` - styles for the navigation dropdown from `navigation.js`
 * `styles.css` - styles for these webpages
 * `/prism/` - a folder for PrismJS code, for colorful codeblocks
 * `/media/` - a folder for media, including pictures
