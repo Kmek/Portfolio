@@ -25,18 +25,23 @@
 	transition-duration: 0.5s;
 	overflow: hidden;
 }
-#navigation div {
+#navigation button {
+	/* Remove other button styles */
+	border: none;
+	border-radius: 0;
+	float: left;
+
+	/* New button styles */
 	width: 200px;
-	height: 40px;
+	height: 41px;
 	background-color: #585858; /* change bg color */
 	border-bottom: 1px solid #08355f; /* change border color */
 	transition-duration: 0.5s;
-}
-#navigation div h4 {
+
+	/* Color styles */
 	color: #ffffff;
-	margin-top: 0;
-	padding-top: 10px;
+	font-weight: bold;
 }
-#navigation div:hover {
+#navigation button:hover {
 	width: 100%;
 }

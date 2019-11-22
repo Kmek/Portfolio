@@ -14,14 +14,12 @@ let navigationDiv = document.createElement("div")
 navigationDiv.setAttribute("id", "navigation")
 
 for (let i = 0; i < navTitles.length; i++) {
-    let title = document.createElement("h4")
-    title.innerHTML = navTitles[i]
-
-    let row = document.createElement("div")
-    row.appendChild(title)
+    let row = document.createElement("button")
+    row.innerHTML = navTitles[i]
+    row.setAttribute("onclick", ("loadFile('" + navLinks[i] + "')"))
     
     let link = document.createElement("a")
-    link.setAttribute("href", navLinks[i])
+    link.setAttribute("href", "#")
     link.appendChild(row)
 
     navigationDiv.appendChild(link)
