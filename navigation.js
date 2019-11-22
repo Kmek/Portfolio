@@ -16,12 +16,18 @@ navigationDiv.setAttribute("id", "navigation")
 for (let i = 0; i < navTitles.length; i++) {
     let row = document.createElement("button")
     row.innerHTML = navTitles[i]
-    row.setAttribute("onclick", ("loadFile('" + navLinks[i] + "')"))
-    
+ 
     let link = document.createElement("a")
-    link.setAttribute("href", "#")
-    link.appendChild(row)
 
+    if (i != navTitles.length - 1) {
+        row.setAttribute("onclick", ("loadFile('" + navLinks[i] + "')"))
+        link.setAttribute("href", "#")
+    }
+    else {
+        link.setAttribute("href", navLinks[i])
+    }
+
+    link.appendChild(row)
     navigationDiv.appendChild(link)
 }
 
