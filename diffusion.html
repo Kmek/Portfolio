@@ -1,68 +1,51 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<title>Portfolio | Diffusion</title>
-	<meta name="author" content="Kate Keefe">
-	<meta name="description" content="Kate Keefe's GitHub Portfolio">
-	<link rel="icon" href="media/GitHub-Mark-64px.png">
+<h2>Diffusion Simulation</h2>
 
-	<link href="prism/prism.css" rel="stylesheet"/>
-	<link href="styles.css" rel="stylesheet"/>	
-</head>
-<body>
+<p>A <mark>diffusion</mark> simulation reconstructed and improved for the Kennett High School Science Department, as the old flash program couldn't be run.</p>
+
+<p>The Science Department wanted the new Diffusion Simulation to function like before. To ensure the program would run on computers for a long time (unlike the flash program before), the Diffusion Sim was made as a webpage using <mark>HTML</mark>, <mark>CSS</mark> and <mark>JavaScript</mark>.</p>
+
+<p>The original flash program did not look too complicated. It basically had green particles that bounced around a box with a divider in the middle. The point of the simulation was to demonstrate the random movement of particles. After a certain amount of time, the particles would be equal on each side of the divider, despite their random motion.</p>
+
+<hr>
+
+<p>The Science Department also wanted a few extra changes, since the Diffusion Sim was being remade from scratch. </p>
+
+<img class="shadow" src="./media/Diffusion sim markup.png" alt="Diffusion sim markup">
+<p class="caption">Picture of the Diffusion Sim with changes requested by the Science Department.</p>
+
+<div class="outline">
+	<h4>The new requirements were:</h4>
+	<ul>
+		<li>A timer built into the page</li>
+		<li>Larger molecules that can't cross the divider</li>
+		<li>Sliders for adjusting the size of the molecules</li>
+		<li>Active Transport to force molecules back to the starting side</li>
+		<li>A button to enable/disable Active Transport</li>
+		<li>Buttons to adjust the temperature</li>
+	</ul>
+</div>
+
+<p>After recreating the old Diffusion Sim, these requirements weren't too tricky.</p>
+
+<img class="shadow" src="./media/Diffusion sim.PNG" alt="New Diffusion Sim Screenshot">
+<p class="caption">Screenshot of the new Diffusion Sim</p>
+
+<hr>
+<div class="center outline">
+	<h3>View The Diffusion Simulation</h3>
+
+	<a href="https://eaglesoftworks.github.io/Diffusion/" target="_blank"><button>Visit Website</button></a>
 	
-	<div id="header">
-		<h1 id="title">Kate Keefe's Portfolio</h1>
-	</div>
+	<a href="https://github.com/EagleSoftworks/Diffusion" target="_blank"><button>View on GitHub</button></a>
+</div>
 
-	<div id="pageBackground">
-		<div id="page">
-			<h2>Diffusion Simulation</h2>
+<hr>
+<h2>Code Snippets</h2>
+<h3><mark>ToggleTimer()</mark></h3>
+<p><mark>toggleTimer</mark> is a function that is used to start and stop the Diffusion Sim. It uses a timer called <mark>canvasDrawing</mark> to call the <mark>drawCanvas()</mark> function every <mark>100ms</mark> and another timer called <mark>timerTicking</mark> to call the <mark>tick()</mark> function every <mark>1000ms</mark>. A <mark>boolean</mark> called <mark>timerOn</mark> is used to track if the simulation is running.</p>
 
-			<p>A <mark>diffusion</mark> simulation reconstructed and improved for the Kennett High School Science Department, as the old flash program couldn't be run.</p>
-
-			<p>The Science Department wanted the new Diffusion Simulation to function like before. To ensure the program would run on computers for a long time (unlike the flash program before), the Diffusion Sim was made as a webpage using <mark>HTML</mark>, <mark>CSS</mark> and <mark>JavaScript</mark>.</p>
-
-			<p>The original flash program did not look too complicated. It basically had green particles that bounced around a box with a divider in the middle. The point of the simulation was to demonstrate the random movement of particles. After a certain amount of time, the particles would be equal on each side of the divider, despite their random motion.</p>
-
-			<hr>
-			
-			<p>The Science Department also wanted a few extra changes, since the Diffusion Sim was being remade from scratch. </p>
-
-			<img class="shadow" src="./media/Diffusion sim markup.png" alt="Diffusion sim markup">
-			<p class="caption">Picture of the Diffusion Sim with changes requested by the Science Department.</p>
-
-			<div class="outline">
-				<h4>The new requirements were:</h4>
-				<ul>
-					<li>A timer built into the page</li>
-					<li>Larger molecules that can't cross the divider</li>
-					<li>Sliders for adjusting the size of the molecules</li>
-					<li>Active Transport to force molecules back to the starting side</li>
-					<li>A button to enable/disable Active Transport</li>
-					<li>Buttons to adjust the temperature</li>
-				</ul>
-			</div>
-
-			<p>After recreating the old Diffusion Sim, these requirements weren't too tricky.</p>
-
-			<img class="shadow" src="./media/Diffusion sim.PNG" alt="New Diffusion Sim Screenshot">
-			<p class="caption">Screenshot of the new Diffusion Sim</p>
-
-			<hr>
-			<div class="center outline">
-				<h3>View The Diffusion Simulation</h3>
-
-				<a href="https://eaglesoftworks.github.io/Diffusion/" target="_blank"><button>Visit Website</button></a>
-				
-				<a href="https://github.com/EagleSoftworks/Diffusion" target="_blank"><button>View on GitHub</button></a>
-			</div>
-
-			<hr>
-			<h2>Code Snippets</h2>
-			<h3><mark>ToggleTimer()</mark></h3>
-			<p><mark>toggleTimer</mark> is a function that is used to start and stop the Diffusion Sim. It uses a timer called <mark>canvasDrawing</mark> to call the <mark>drawCanvas()</mark> function every <mark>100ms</mark> and another timer called <mark>timerTicking</mark> to call the <mark>tick()</mark> function every <mark>1000ms</mark>. A <mark>boolean</mark> called <mark>timerOn</mark> is used to track if the simulation is running.</p>
-
+<link href="prism/prism.css" rel="stylesheet"/>
+<script src="prism/prism.js"></script>
 <pre data-label="toggleTimer()"><code class="language-javascript match-braces rainbow-braces line-numbers">function toggleTimer() {
 	if (timerOn === false && timerInput.value > 0) {
 		timerOn = true;
@@ -81,8 +64,8 @@
 	}
 }</code></pre>
 			
-			<h3><mark>Molecule Class</mark></h3>
-			<p>To keep track of all the molecules in the Diffusion Sim, a molecule <mark>class</mark> was used. Each molecule had to remember which type of molecule it was, as there are two different molecules; the large red ones and the small green ones. To do this, an <mark>enum</mark> is saved in the <mark>Molecule.moleculeType</mark> of each molecule. Because molecules have to move on a canvas, each molecule must also remember its position, so the <mark>Molecule.x</mark> and <mark>Molecule.y</mark> are also saved. these values start with the molecule's starting position, <mark>startX</mark> and <mark>startY</mark>. Each molecule also has two functions, <mark>updateMolecule()</mark> and <mark>draw()</mark>. The <mark>draw()</mark> function simply draws the molecule on the canvas depending on the <mark>Molecule.moleculeType</mark>. The radius of each molecule type is stored outside of the molecule class. <mark>updateMolecule()</mark> is a more complicated function that moves a molecule a random distance in a random direction. This function prevents molecules from going outside the canvas or jumping straight through the wall. It also takes into account if active transport is enabled or if there are open ports on the wall. </p>
+<h3><mark>Molecule Class</mark></h3>
+<p>To keep track of all the molecules in the Diffusion Sim, a molecule <mark>class</mark> was used. Each molecule had to remember which type of molecule it was, as there are two different molecules; the large red ones and the small green ones. To do this, an <mark>enum</mark> is saved in the <mark>Molecule.moleculeType</mark> of each molecule. Because molecules have to move on a canvas, each molecule must also remember its position, so the <mark>Molecule.x</mark> and <mark>Molecule.y</mark> are also saved. these values start with the molecule's starting position, <mark>startX</mark> and <mark>startY</mark>. Each molecule also has two functions, <mark>updateMolecule()</mark> and <mark>draw()</mark>. The <mark>draw()</mark> function simply draws the molecule on the canvas depending on the <mark>Molecule.moleculeType</mark>. The radius of each molecule type is stored outside of the molecule class. <mark>updateMolecule()</mark> is a more complicated function that moves a molecule a random distance in a random direction. This function prevents molecules from going outside the canvas or jumping straight through the wall. It also takes into account if active transport is enabled or if there are open ports on the wall. </p>
 
 <pre data-label="Molecule Class"><code class="language-javascript match-braces rainbow-braces line-numbers">class Molecule {
 	constructor(moleculeType, startX, startY) {
@@ -102,19 +85,3 @@
 	}
 }
 </code></pre>
-
-		</div>
-	</div>
-
-	<div id="footer">
-		<span id="footerText">Portfolio & website made by Kate Keefe</span>
-		<a href="https://github.com/Kmek/Portfolio" target="_blank"><button id="githubBtn">View on GitHub</button></a>
-	</div>
-
-	<div id="navBtn"></div>
-	<link rel="stylesheet" type="text/css" href="navigation.css">
-	<script src="navigation.js"></script>
-	
-	<script src="prism/prism.js"></script>
-</body>
-</html>
