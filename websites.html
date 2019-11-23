@@ -1,44 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<title>Portfolio | Web Design</title>
-	<meta name="author" content="Kate Keefe">
-	<meta name="description" content="Kate Keefe's GitHub Portfolio">
-	<link rel="icon" href="media/GitHub-Mark-64px.png">
+<h1>Web Design</h1>
 
-	<link href="prism/prism.css" rel="stylesheet"/>
-	<link href="styles.css" rel="stylesheet"/>	
-</head>
-<body>
-	
-	<div id="header">
-		<h1 id="title">Kate Keefe's Portfolio</h1>
-	</div>
+<hr>
+<h2>Diffusion Webpage & Pathfinding Webpage</h2>
 
-	<div id="pageBackground">
-		<div id="page">
-			<h1>Web Design</h1>
+<p>The Diffusion webpage and the Pathfinding webpage both use <mark>HTML</mark>, <mark>CSS</mark>, <mark>JavaScript</mark> to make things work. Both of these pages also use the <mark><<!-- -->canvas></mark> component to draw the actual simulation by hand. Both of these pages also heavily depend on <mark>JavaScript</mark>.</p>
+
+<div class="center outline">
+	<h4>More information can be found on these pages</h4>
+	<a href="./pathfinding.html"><button>Pathfinding Page</button></a>
+	<a href="./diffusion.html"><button>Diffusion Page</button></a>
+</div>
+
+<hr>
+<h2>Portfolio Webpage</h2>
+
+<p>This portfolio website spans several <mark>HTML</mark> pages. <a href="https://prismjs.com/" target="_blank"><mark>PrismJS</mark></a> is used on several pages for colorful code blocks. This website also uses <a href="https://www.vectary.com/" target="_blank"><mark>Vectary</mark></a> on the <mark>grabcad.html</mark> page for easily displaying 3D models within a page.</p>
+
+<h3>Using <mark>PrismJS</mark></h3>
+
+<p>The files for <mark>PrismJS</mark> can be found in the <mark>/prism/</mark> folder. Then the <mark>CSS</mark> and <mark>JavaScript</mark> is just included into the webpage. To make a code block, enclose the code for the block inside a set of <mark><<!-- -->pre></mark> and <mark><<!-- -->code></mark> components. Depending on the plugins added, a label can be displayed by setting the <mark>data-label</mark> in the <mark><<!-- -->pre></mark> component. Line numbers, bracket highlighting, and rainbow brackets can be added with the <mark>line-numbers</mark>, <mark>match-braces</mark>, and <mark>rainbow-braces</mark> classes to the <mark><<!-- -->code></mark> component.</p>
 			
-			<hr>
-			<h2>Diffusion Webpage & Pathfinding Webpage</h2>
-
-			<p>The Diffusion webpage and the Pathfinding webpage both use <mark>HTML</mark>, <mark>CSS</mark>, <mark>JavaScript</mark> to make things work. Both of these pages also use the <mark><<!-- -->canvas></mark> component to draw the actual simulation by hand. Both of these pages also heavily depend on <mark>JavaScript</mark>.</p>
-
-			<div class="center outline">
-				<h4>More information can be found on these pages</h4>
-				<a href="./pathfinding.html"><button>Pathfinding Page</button></a>
-				<a href="./diffusion.html"><button>Diffusion Page</button></a>
-			</div>
-			
-			<hr>
-			<h2>Portfolio Webpage</h2>
-
-			<p>This portfolio website spans several <mark>HTML</mark> pages. <a href="https://prismjs.com/" target="_blank"><mark>PrismJS</mark></a> is used on several pages for colorful code blocks. This website also uses <a href="https://www.vectary.com/" target="_blank"><mark>Vectary</mark></a> on the <mark>grabcad.html</mark> page for easily displaying 3D models within a page.</p>
-
-			<h3>Using <mark>PrismJS</mark></h3>
-
-			<p>The files for <mark>PrismJS</mark> can be found in the <mark>/prism/</mark> folder. Then the <mark>CSS</mark> and <mark>JavaScript</mark> is just included into the webpage. To make a code block, enclose the code for the block inside a set of <mark><<!-- -->pre></mark> and <mark><<!-- -->code></mark> components. Depending on the plugins added, a label can be displayed by setting the <mark>data-label</mark> in the <mark><<!-- -->pre></mark> component. Line numbers, bracket highlighting, and rainbow brackets can be added with the <mark>line-numbers</mark>, <mark>match-braces</mark>, and <mark>rainbow-braces</mark> classes to the <mark><<!-- -->code></mark> component.</p>
-			
+<link href="prism/prism.css" rel="stylesheet"/>
+<script src="prism/prism.js"></script>
 <pre data-label="Example Code Block">
 <code class="language-html match-braces rainbow-braces line-numbers"><<!-- -->head>
 	<<!-- -->link href="prism/prism.css" rel="stylesheet"/>
@@ -55,11 +38,10 @@
 <<!-- -->/body>
 </code></pre>			
 
+<p>One drawback I found while making this portfolio website is that <mark>Chrome</mark> doesn't allow a page to import any external files. I wanted to import each extra <mark>HTML</mark> page into the main "page" <mark><<!-- -->div<!-- -->></mark>, as this would save copying and pasting the same header and footer.<mark>Chrome</mark> doesn't allow this even if the file is in the same directory. This also means that the <mark>File-Highlight</mark> plugin for <mark>PrismJS</mark> does not work. This is why each page of the website has to be its own <mark>HTML</mark> file.</p>
 
-			<p>One drawback I found while making this portfolio website is that <mark>Chrome</mark> doesn't allow a page to import any external files. I wanted to import each extra <mark>HTML</mark> page into the main "page" <mark><<!-- -->div<!-- -->></mark>, as this would save copying and pasting the same header and footer.<mark>Chrome</mark> doesn't allow this even if the file is in the same directory. This also means that the <mark>File-Highlight</mark> plugin for <mark>PrismJS</mark> does not work. This is why each page of the website has to be its own <mark>HTML</mark> file.</p>
-
-			<h3>Portfolio Page Layout</h3>
-			<p>The basic layout for each <mark>HTML</mark> file starts with a <mark><<!-- -->div></mark> with the "header" <mark>id</mark>. Inside of this is a <mark><<!-- -->h1></mark> with the "title" <mark>id</mark>, which links back to the main <mark>index.html</mark> page. The next <mark><<!-- -->div></mark>, "pageBackground", holds the patterned paper-like background separate from the page contents. The page contents reside in their own <mark><<!-- -->div></mark>, "page". The last <mark><<!-- -->div></mark> is the "footer", which holds the bottom left "footerText" note and the bottom right "githubBtn" button. This button links to the GitHub page for this portfolio's repository.</p>
+<h3>Portfolio Page Layout</h3>
+<p>The basic layout for each <mark>HTML</mark> file starts with a <mark><<!-- -->div></mark> with the "header" <mark>id</mark>. Inside of this is a <mark><<!-- -->h1></mark> with the "title" <mark>id</mark>, which links back to the main <mark>index.html</mark> page. The next <mark><<!-- -->div></mark>, "pageBackground", holds the patterned paper-like background separate from the page contents. The page contents reside in their own <mark><<!-- -->div></mark>, "page". The last <mark><<!-- -->div></mark> is the "footer", which holds the bottom left "footerText" note and the bottom right "githubBtn" button. This button links to the GitHub page for this portfolio's repository.</p>
 		
 <pre data-label="Portfolio Page Layout"><code class="language-html match-braces rainbow-braces line-numbers"><<!-- -->body>
 	<<!-- -->div id="header">
@@ -85,8 +67,8 @@
 <<!-- -->/body>
 </code></pre>		
 
-			<h3>Totalling Hours In <mark>hours.html</mark></h3>
-			<p>On the volunteering hours page, there's a big table with a list of hours. To make it easy to add more hours, <mark>JavaScript</mark> adds up all of the hours in the table. This total is counted with a simple <mark>for</mark> loop and displayed in the cell with the <mark>id</mark> "tableTotal".</p>
+<h3>Totalling Hours In <mark>hours.html</mark></h3>
+<p>On the volunteering hours page, there's a big table with a list of hours. To make it easy to add more hours, <mark>JavaScript</mark> adds up all of the hours in the table. This total is counted with a simple <mark>for</mark> loop and displayed in the cell with the <mark>id</mark> "tableTotal".</p>
 		
 <pre data-label="hours.html script">
 <code class="language-javascript match-braces rainbow-braces line-numbers">var table = document.getElementById("tableHours")
@@ -94,19 +76,3 @@ let total = document.getElementById("tableTotal")
 for (let i = 1; i < (table.rows.length - 1); i++) 
 	total.innerHTML = (Number(total.innerHTML) + Number(table.rows[i].cells[2].innerHTML))
 </code></pre>
-	
-		</div>
-	</div>
-
-	<div id="footer">
-		<span id="footerText">Portfolio & website made by Kate Keefe</span>
-		<a href="https://github.com/Kmek/Portfolio" target="_blank"><button id="githubBtn">View on GitHub</button></a>
-	</div>
-
-	<div id="navBtn"></div>
-	<link rel="stylesheet" type="text/css" href="navigation.css">
-	<script src="navigation.js"></script>
-	
-	<script src="prism/prism.js"></script>
-</body>
-</html>
