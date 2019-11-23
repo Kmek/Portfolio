@@ -2,7 +2,8 @@
 
 This portfolio can be viewed at kmek.github.io/Portfolio/
 
-* `index.html` - the main table of contents
+* `index.html` - the base layout for each page
+* `index-buttons.html` - the main table of contents
 * `diffusion.html` - a page for the Diffusion Simulation
 * `pathfinding.html` - a page for the Science Fair Pathfinding code
 * `vectorsolver.html` - a page for the vector solver for physics problems
@@ -17,6 +18,7 @@ This portfolio can be viewed at kmek.github.io/Portfolio/
 * `navigation.js` - `JavaScript` for the navigation dropdown on each page
 * `navigation.css` - styles for the navigation dropdown from `navigation.js`
 * `styles.css` - styles for these webpages
+* `script.js` - `JavaScript` for loading pages using `JQuery`
 * `/prism/` - a folder for PrismJS code, for colorful codeblocks
 * `/media/` - a folder for media, including pictures
 

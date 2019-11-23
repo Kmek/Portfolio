@@ -38,34 +38,49 @@
 <<!-- -->/body>
 </code></pre>			
 
-<p>One drawback I found while making this portfolio website is that <mark>Chrome</mark> doesn't allow a page to import any external files. I wanted to import each extra <mark>HTML</mark> page into the main "page" <mark><<!-- -->div<!-- -->></mark>, as this would save copying and pasting the same header and footer.<mark>Chrome</mark> doesn't allow this even if the file is in the same directory. This also means that the <mark>File-Highlight</mark> plugin for <mark>PrismJS</mark> does not work. This is why each page of the website has to be its own <mark>HTML</mark> file.</p>
-
 <h3>Portfolio Page Layout</h3>
-<p>The basic layout for each <mark>HTML</mark> file starts with a <mark><<!-- -->div></mark> with the "header" <mark>id</mark>. Inside of this is a <mark><<!-- -->h1></mark> with the "title" <mark>id</mark>, which links back to the main <mark>index.html</mark> page. The next <mark><<!-- -->div></mark>, "pageBackground", holds the patterned paper-like background separate from the page contents. The page contents reside in their own <mark><<!-- -->div></mark>, "page". The last <mark><<!-- -->div></mark> is the "footer", which holds the bottom left "footerText" note and the bottom right "githubBtn" button. This button links to the GitHub page for this portfolio's repository.</p>
+<p>The layout for each <mark>HTML</mark> file lives in <mark>index.html</mark>. Inside this file is a <mark><<!-- -->div></mark> with the "pageBackground" <mark>id</mark>. Inside that is a <mark><<!-- -->div></mark> with the "page" <mark>id</mark>, where each page's contents are loaded. Using a little function with <mark>JQuery</mark> called <mark>loadFile()</mark>, which puts the given <mark>filename</mark> into the "page" <mark><<!-- -->div></mark>. This eliminates the need for all of the individual page <mark>HTML</mark> files to have duplicate header and footer code.</p>
 		
-<pre data-label="Portfolio Page Layout"><code class="language-html match-braces rainbow-braces line-numbers"><<!-- -->body>
+<pre data-label="Portfolio Page Layout"><code class="language-html match-braces rainbow-braces line-numbers"><<!-- -->!DOCTYPE html>
+<<!-- -->html lang="en">
+<<!-- -->head>
+	<<!-- -->title>Portfolio<<!-- -->/title>
+	<<!-- -->meta name="author" content="Kate Keefe">
+	<<!-- -->meta name="description" content="Kate Keefe's GitHub Portfolio">
+	<<!-- -->link rel="icon" href="media/GitHub-Mark-64px.png">
+
+	<<!-- -->link href="styles.css" rel="stylesheet"/>
+
+	<<!-- -->script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"><<!-- -->/script>
+	<<!-- -->script src="./script.js"><<!-- -->/script>
+<<!-- -->/head>
+<<!-- -->body>
 	<<!-- -->div id="header">
-		<<!-- -->a href="./index.html"><<!-- -->h1 id="title">Kate Keefe's Portfolio</<!-- -->h1><<!-- -->/a>
+		<<!-- -->h1 id="title">Kate Keefe's Portfolio<<!-- -->/h1>
 	<<!-- -->/div>
 
 	<<!-- -->div id="pageBackground">
 		<<!-- -->div id="page">
-
-			<<!-- -->!-- Contents of the page go here -->
-
+			<<!-- -->script>loadFile("index-buttons.html")<<!-- -->/script>
 		<<!-- -->/div>
 	<<!-- -->/div>
 
 	<<!-- -->div id="footer">
 		<<!-- -->span id="footerText">Portfolio & website made by Kate Keefe<<!-- -->/span>
-		<<!-- -->a href="https://github.com/Kmek/Portfolio" target="_blank">
-			<<!-- -->button id="githubBtn">View on GitHub<<!-- -->/button>
-		<<!-- -->/a>
+		<<!-- -->a href="https://github.com/Kmek/Portfolio" target="_blank"><<!-- -->button id="githubBtn">View on GitHub</<!-- -->button><<!-- -->/a>
 	<<!-- -->/div>
-	
-	<<!-- -->script src="prism/prism.js"><<!-- -->/script>
+
+	<<!-- -->div id="navBtn"><<!-- -->/div>
+	<<!-- -->link rel="stylesheet" type="text/css" href="navigation.css">
+	<<!-- -->script src="navigation.js"><<!-- -->/script>
 <<!-- -->/body>
-</code></pre>		
+<<!-- -->/html>
+</code></pre>
+
+<pre data-label="loadFile()"><code class="language-javascript match-braces rainbow-braces line-numbers">function loadFile(filename) {
+    $('#page').load(filename);
+}
+</code></pre>
 
 <h3>Totalling Hours In <mark>hours.html</mark></h3>
 <p>On the volunteering hours page, there's a big table with a list of hours. To make it easy to add more hours, <mark>JavaScript</mark> adds up all of the hours in the table. This total is counted with a simple <mark>for</mark> loop and displayed in the cell with the <mark>id</mark> "tableTotal".</p>
@@ -75,4 +90,29 @@
 let total = document.getElementById("tableTotal")
 for (let i = 1; i < (table.rows.length - 1); i++) 
 	total.innerHTML = (Number(total.innerHTML) + Number(table.rows[i].cells[2].innerHTML))
+</code></pre>
+
+<h3>The Navigation Dropdown</h3>
+<p>The navigation dropdown is made with <mark>navigation.js</mark> for building the dropdown and <mark>navigation.css</mark> for styling the dropdown. Inside <mark>index.html</mark>, a <mark><<!-- -->div></mark> called "navBtn" holds the navigation. The buttons themselves are created by <mark>navigation.js</mark>, which hold the <mark>navTitles</mark> and <mark>navLinks</mark> in two arrays. Before the <mark>HTML</mark> pages were loaded using the <mark>loadFile()</mark> function, this file setup made it easy to create the navigation in all pages.</p> 
+
+<pre data-label="hours.html script">
+<code class="language-javascript match-braces rainbow-braces line-numbers">for (let i = 0; i < navTitles.length; i++) {
+	let row = document.createElement("button")
+	row.innerHTML = navTitles[i]
+	
+	let link = document.createElement("a")
+
+	if (i != navTitles.length - 1) {
+		row.setAttribute("onclick", ("loadFile('" + navLinks[i] + "')"))
+		link.setAttribute("href", "#")
+	}
+	else {
+		link.setAttribute("href", navLinks[i])
+	}
+
+	link.appendChild(row)
+	navigationDiv.appendChild(link)
+}
+
+navBtn.appendChild(navigationDiv)
 </code></pre>

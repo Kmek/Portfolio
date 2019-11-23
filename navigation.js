@@ -10,7 +10,7 @@ let navDots = document.createElement("h2")
 navDots.innerHTML = "..."
 navBtn.appendChild(navDots)
 
-let navigationDiv = document.createElement("div")
+var navigationDiv = document.createElement("div")
 navigationDiv.setAttribute("id", "navigation")
 
 for (let i = 0; i < navTitles.length; i++) {
