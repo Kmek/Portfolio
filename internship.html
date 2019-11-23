@@ -1,39 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<title>Portfolio | Internship</title>
-	<meta name="author" content="Kate Keefe">
-	<meta name="description" content="Kate Keefe's GitHub Portfolio">
-	<link rel="icon" href="media/GitHub-Mark-64px.png">
+<h2>Internship At The Echo Group</h2>
+<p>In the summer of 2019, I worked as an intern at The Echo Group, a software company in Conway, NH.</p>
 
-	<link href="prism/prism.css" rel="stylesheet"/>
-	<link href="styles.css" rel="stylesheet"/>	
-</head>
-<body>
-	
-	<div id="header">
-		<h1 id="title">Kate Keefe's Portfolio</h1>
-	</div>
+<div class="center outline" style="margin-bottom:5px;">
+	<h4>Visit The Echo Group Online</h4>
+	<a href="https://www.echobh.com/" target="_blank"><button>The Echo Group</button></a>
+</div>
 
-	<div id="pageBackground">
-		<div id="page">
-			<h2>Internship At The Echo Group</h2>
-			<p>In the summer of 2019, I worked as an intern at The Echo Group, a software company in Conway, NH.</p>
+<h3><mark>PowerShell</mark> Scripts</h3>
 
-			<div class="center outline" style="margin-bottom:5px;">
-				<h4>Visit The Echo Group Online</h4>
-				<a href="https://www.echobh.com/" target="_blank"><button>The Echo Group</button></a>
-			</div>
+<p>One of the main languages I worked with was <mark>PowerShell</mark>. <mark>PowerShell</mark> is a language that runs scripts on Windows computers. Another intern and I worked on streamlining the developer setup process by creating scripts to set up a developer environment on a new computer. This included using <mark>Chocolatey</mark>, a package manager for Windows, to download various useful programs and applications. At certain times, the current user of the computer had to be automatically added into a user group. At the end of the summer, these <mark>PowerShell</mark> scripts cut over five hours of installation down to just about one hour, depending on which programs were selected to download.</p> 
 
-			<h3><mark>PowerShell</mark> Scripts</h3>
+<p>The scripts didn't just help with installation, they also made it easier to start up certain Echo products for testing. One such product required five programs to run with <mark>Java</mark> and a local server to run for communication. <mark>Docker</mark> was used to run a local <mark>SQL Server</mark> instance as a database for testing. Because of this, several <mark>SQL</mark> scripts had to be run through <mark>PowerShell</mark> using the <mark>Invoke-SqlCmd</mark> command. Another option was to run the five programs from <mark>Docker</mark> images. This was tricky as the same file that ran on Linux without issue wouldn't run properly on Windows because <mark>localhost</mark> referenced the Linux virtual machine <mark>Docker</mark> ran inside instead of the computer itself, but it worked eventually.</p>
 
-			<p>One of the main languages I worked with was <mark>PowerShell</mark>. <mark>PowerShell</mark> is a language that runs scripts on Windows computers. Another intern and I worked on streamlining the developer setup process by creating scripts to set up a developer environment on a new computer. This included using <mark>Chocolatey</mark>, a package manager for Windows, to download various useful programs and applications. At certain times, the current user of the computer had to be automatically added into a user group. At the end of the summer, these <mark>PowerShell</mark> scripts cut over five hours of installation down to just about one hour, depending on which programs were selected to download.</p> 
+<h3>WinForms with <mark>PowerShell</mark></h3>
+<p>Because one set of scripts was going to go to customers, it needed to look nice. Since some people are scared of raw terminals, such as the one <mark>PowerShell</mark> is run within, I worked on adding Windows Form to make the scripts more user-friendly. This is easy enough with adding the <mark>System.Windows.Forms</mark> and <mark>System.Drawing</mark> <mark>PowerShell</mark> assemblies, but creating a form by hand takes gross walls of text. </p>
 
-			<p>The scripts didn't just help with installation, they also made it easier to start up certain Echo products for testing. One such product required five programs to run with <mark>Java</mark> and a local server to run for communication. <mark>Docker</mark> was used to run a local <mark>SQL Server</mark> instance as a database for testing. Because of this, several <mark>SQL</mark> scripts had to be run through <mark>PowerShell</mark> using the <mark>Invoke-SqlCmd</mark> command. Another option was to run the five programs from <mark>Docker</mark> images. This was tricky as the same file that ran on Linux without issue wouldn't run properly on Windows because <mark>localhost</mark> referenced the Linux virtual machine <mark>Docker</mark> ran inside instead of the computer itself, but it worked eventually.</p>
-
-			<h3>WinForms with <mark>PowerShell</mark></h3>
-			<p>Because one set of scripts was going to go to customers, it needed to look nice. Since some people are scared of raw terminals, such as the one <mark>PowerShell</mark> is run within, I worked on adding Windows Form to make the scripts more user-friendly. This is easy enough with adding the <mark>System.Windows.Forms</mark> and <mark>System.Drawing</mark> <mark>PowerShell</mark> assemblies, but creating a form by hand takes gross walls of text. </p>
-
+<link href="prism/prism.css" rel="stylesheet"/>
+<script src="prism/prism.js"></script>
 <pre data-label="Creating A Custom Input Box">
 <code class="language-powershell match-braces rainbow-braces line-numbers"># Creating A Custom Input Box (from the Microsoft Docs)
 # https://docs.microsoft.com/en-us/powershell/scripting/samples/creating-a-custom-input-box?view=powershell-6
@@ -78,7 +61,7 @@ $form.Add_Shown({$textBox.Select()})
 $result = $form.ShowDialog()
 </code></pre>
 
-			<p>The above code comes straight from the <a href="https://docs.microsoft.com/en-us/powershell/scripting/samples/creating-a-custom-input-box?view=powershell-6" target="_blank">Microsoft Docs</a>, and results in a small graphical Windows Form with a textbox, a label, a cancel button, and an input button. To cut down on all of this text, I made my very own <mark>PowerShell</mark> Custom Forms library, complete with its very own <mark>custom_forms.md</mark> cheat sheet. In this Custom Forms module, each added component is reduced to about one line of code. </p>
+<p>The above code comes straight from the <a href="https://docs.microsoft.com/en-us/powershell/scripting/samples/creating-a-custom-input-box?view=powershell-6" target="_blank">Microsoft Docs</a>, and results in a small graphical Windows Form with a textbox, a label, a cancel button, and an input button. To cut down on all of this text, I made my very own <mark>PowerShell</mark> Custom Forms library, complete with its very own <mark>custom_forms.md</mark> cheat sheet. In this Custom Forms module, each added component is reduced to about one line of code. </p>
 
 <pre data-label="Creating A Custom Input Box with Custom_Forms.psm1">
 <code class="language-powershell match-braces rainbow-braces line-numbers"># Creating A Custom Input Box (from the Microsoft Docs) Revised With Custom_Forms.psm1
@@ -100,26 +83,10 @@ $Form.Add_Shown({$This.controls["textbox"].Select()})
 $result = $Form.ShowDialog()
 </code></pre>
 
-			<p>The above code creates the same form as before but with less than half the lines of code. The two needed assemblies are added automatically when using the <mark>custom_forms.psm1</mark> module. Components are also added automatically to the controls of the passed in reference form (or component).</p>
+<p>The above code creates the same form as before but with less than half the lines of code. The two needed assemblies are added automatically when using the <mark>custom_forms.psm1</mark> module. Components are also added automatically to the controls of the passed in reference form (or component).</p>
 
-			<h3>Documentation Site</h3>
-			<p>Because I only worked during the summer, documentation was very important. Other developers were going to need to know how to maintain the various <mark>PowerShell</mark> scripts when I went back to school. The Echo Group used an internal documentation website that any developer could add pages to or edit existing pages. For easy formatting, these pages were written in <mark>Markdown</mark>. </p>
+<h3>Documentation Site</h3>
+<p>Because I only worked during the summer, documentation was very important. Other developers were going to need to know how to maintain the various <mark>PowerShell</mark> scripts when I went back to school. The Echo Group used an internal documentation website that any developer could add pages to or edit existing pages. For easy formatting, these pages were written in <mark>Markdown</mark>. </p>
 
-			<h3>Formal Pull Requests & Source Control</h3>
-			<p>At The Echo Group, developers used BitBucket for source control. Through using BitBucket, I also learned how to use Git to manage branches and commits on a repository. Additionally I learned how to make detailed Pull Requests, which were written in <mark>Markdown</mark> for styling ease. Pull Requests made it possible for other developers at Echo to review my code, before I had the chance to break anything.</p>
-
-		</div>
-	</div>
-
-	<div id="footer">
-		<span id="footerText">Portfolio & website made by Kate Keefe</span>
-		<a href="https://github.com/Kmek/Portfolio" target="_blank"><button id="githubBtn">View on GitHub</button></a>
-	</div>
-
-	<div id="navBtn"></div>
-	<link rel="stylesheet" type="text/css" href="navigation.css">
-	<script src="navigation.js"></script>
-	
-	<script src="prism/prism.js"></script>
-</body>
-</html>
+<h3>Formal Pull Requests & Source Control</h3>
+<p>At The Echo Group, developers used BitBucket for source control. Through using BitBucket, I also learned how to use Git to manage branches and commits on a repository. Additionally I learned how to make detailed Pull Requests, which were written in <mark>Markdown</mark> for styling ease. Pull Requests made it possible for other developers at Echo to review my code, before I had the chance to break anything.</p>
