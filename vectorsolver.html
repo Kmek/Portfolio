@@ -1,51 +1,34 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<title>Portfolio | Vector Solver</title>
-	<meta name="author" content="Kate Keefe">
-	<meta name="description" content="Kate Keefe's GitHub Portfolio">
-	<link rel="icon" href="media/GitHub-Mark-64px.png">
+<h2>Vectors</h2>
 
-	<link href="prism/prism.css" rel="stylesheet"/>
-	<link href="styles.css" rel="stylesheet"/>	
-</head>
-<body>
+<p>In my physics class senior year, we are learning about vectors. Vectors are commonly used to measure things like displacement, velocity, acceleration, and force. Multiple vectors can be applied to one object, so they are added together to form a resulting vector. A vector is made up of a <mark>magnitude</mark>, which is the length of the vector, and an angle <mark>degree</mark>. To be added together, vectors can be turned into <mark>X</mark> components and <mark>Y</mark> components, representing the (<mark>X</mark>,<mark>Y</mark>) coordinate at the end of the vector arrow. These points can be added together to determine the resulting vector.</p>
+
+<p>To make this a little easier to understand, I created a webpage that converts and adds vectors together. These vectors are displayed on a graph on a square canvas to show how they all compare to one another. The webpage was made using <mark>HTML</mark>, <mark>CSS</mark>, and <mark>JavaScript</mark> because I have some previous experience with the canvas component, which can be seen in the Diffusion Simulation and the Pathfinding Simulation.</p>
+
+<hr>
+<h2>The Vector Solver Webpage</h2>
+
+<img class="shadow" src="./media/vectorsolver.PNG" alt="Screenshot of the Vector Solver webpage with three arrows on the graph representing three vectors">
+<p class="caption">Screenshot of the Vector Solver with three arrows on the graph</p>
+
+<p>On the Vector Solver, vectors can be created with the <mark>+ Add Vector</mark> button. Either the <mark>magnitude</mark> & <mark>degree</mark> or the (<mark>X</mark>,<mark>Y</mark>) coordinate for the vector can be entered in the text input boxes provided, the other form will be automatically calculated. From there, the resulting & equilibrium vectors will be automatically calculated and displayed in the two boxes below the graph. On the graph, each vector will be displayed as an arrow of its corresponding color, which can be changed with the color picker button on the left of the vector's row. The resulting vector is drawn as an arrow with a dashed line, to differentiate it from the other vectors. Each vector can also be disabled with a checkbox on the right of each row. This prevents the arrow from being calculated into the resulting vector and drawn on the graph. At the bottom left corner of the page is a button that determines the number of decimals numbers are rounded to. This ranges from <mark>0</mark> to <mark>0.0000</mark>, but by default it is set at <mark>0.00</mark>.</p>
+
+<hr>
+<div class="center outline">
+	<h3>View The Vector Solver</h3>
+
+	<a href="https://kmek.github.io/VectorSolver/" target="_blank"><button>Visit Website</button></a>
 	
-	<div id="header">
-		<h1 id="title">Kate Keefe's Portfolio</h1>
-	</div>
+	<a href="https://github.com/Kmek/VectorSolver" target="_blank"><button>View on GitHub</button></a>
+</div>
 
-	<div id="pageBackground">
-		<div id="page">
-            <h2>Vectors</h2>
-            
-            <p>In my physics class senior year, we are learning about vectors. Vectors are commonly used to measure things like displacement, velocity, acceleration, and force. Multiple vectors can be applied to one object, so they are added together to form a resulting vector. A vector is made up of a <mark>magnitude</mark>, which is the length of the vector, and an angle <mark>degree</mark>. To be added together, vectors can be turned into <mark>X</mark> components and <mark>Y</mark> components, representing the (<mark>X</mark>,<mark>Y</mark>) coordinate at the end of the vector arrow. These points can be added together to determine the resulting vector.</p>
+<hr>
+<h2>Code Snippets</h2>
+<h3>Helper Functions</h3>
 
-            <p>To make this a little easier to understand, I created a webpage that converts and adds vectors together. These vectors are displayed on a graph on a square canvas to show how they all compare to one another. The webpage was made using <mark>HTML</mark>, <mark>CSS</mark>, and <mark>JavaScript</mark> because I have some previous experience with the canvas component, which can be seen in the Diffusion Simulation and the Pathfinding Simulation.</p>
+<p>The following functions help make conversions form <mark>magnitude</mark> & <mark>degrees</mark> to (<mark>X</mark>,<mark>Y</mark>) easier. the functions <mark>toRadians()</mark> and <mark>toDegrees()</mark> convert between radians and degrees, because javascript uses radians in its trigonometric functions, but the angle of the vector is entered and given in degrees. The functions <mark>toPolarX()</mark>, <mark>toPolarY()</mark>, and <mark>toPolar()</mark> convert from polar form, magnitude & degrees, to (<mark>X</mark>,<mark>Y</mark>) coordinates. For ease, coordinates are often saved as an array of two elements, so the point can be easily passed in as a parameter to a function, so <mark>toPolar()</mark> returns this array. But the other two functions only return the given <mark>X</mark> or <mark>Y</mark> value. The functions <mark>toPolarR()</mark> and <mark>toPolarDeg()</mark> convert from the opposite direction. These functions aid in drawing on the canvas, as the canvas only accepts (<mark>X</mark>,<mark>Y</mark>) coordinates for drawing.</p>
 
-            <hr>
-            <h2>The Vector Solver Webpage</h2>
-
-            <img class="shadow" src="./media/vectorsolver.PNG" alt="Screenshot of the Vector Solver webpage with three arrows on the graph representing three vectors">
-            <p class="caption">Screenshot of the Vector Solver with three arrows on the graph</p>
-            
-            <p>On the Vector Solver, vectors can be created with the <mark>+ Add Vector</mark> button. Either the <mark>magnitude</mark> & <mark>degree</mark> or the (<mark>X</mark>,<mark>Y</mark>) coordinate for the vector can be entered in the text input boxes provided, the other form will be automatically calculated. From there, the resulting & equilibrium vectors will be automatically calculated and displayed in the two boxes below the graph. On the graph, each vector will be displayed as an arrow of its corresponding color, which can be changed with the color picker button on the left of the vector's row. The resulting vector is drawn as an arrow with a dashed line, to differentiate it from the other vectors. Each vector can also be disabled with a checkbox on the right of each row. This prevents the arrow from being calculated into the resulting vector and drawn on the graph. At the bottom left corner of the page is a button that determines the number of decimals numbers are rounded to. This ranges from <mark>0</mark> to <mark>0.0000</mark>, but by default it is set at <mark>0.00</mark>.</p>
-
-            <hr>
-			<div class="center outline">
-				<h3>View The Vector Solver</h3>
-
-				<a href="https://kmek.github.io/VectorSolver/" target="_blank"><button>Visit Website</button></a>
-				
-				<a href="https://github.com/Kmek/VectorSolver" target="_blank"><button>View on GitHub</button></a>
-            </div>
-            
-            <hr>
-			<h2>Code Snippets</h2>
-			<h3>Helper Functions</h3>
-
-			<p>The following functions help make conversions form <mark>magnitude</mark> & <mark>degrees</mark> to (<mark>X</mark>,<mark>Y</mark>) easier. the functions <mark>toRadians()</mark> and <mark>toDegrees()</mark> convert between radians and degrees, because javascript uses radians in its trigonometric functions, but the angle of the vector is entered and given in degrees. The functions <mark>toPolarX()</mark>, <mark>toPolarY()</mark>, and <mark>toPolar()</mark> convert from polar form, magnitude & degrees, to (<mark>X</mark>,<mark>Y</mark>) coordinates. For ease, coordinates are often saved as an array of two elements, so the point can be easily passed in as a parameter to a function, so <mark>toPolar()</mark> returns this array. But the other two functions only return the given <mark>X</mark> or <mark>Y</mark> value. The functions <mark>toPolarR()</mark> and <mark>toPolarDeg()</mark> convert from the opposite direction. These functions aid in drawing on the canvas, as the canvas only accepts (<mark>X</mark>,<mark>Y</mark>) coordinates for drawing.</p>
-
+<link href="prism/prism.css" rel="stylesheet"/>
+<script src="prism/prism.js"></script>
 <pre data-label="Helper Functions"><code class="language-javascript match-braces rainbow-braces line-numbers">// For converting between radians and degrees
 function toRadians(degrees) {
     return (degrees * (Math.PI / 180));
@@ -96,9 +79,9 @@ function toPolarDeg(xy) {
 }
 </code></pre>
 
-		<h3><mark>Vector</mark> Class</h3>
+<h3><mark>Vector</mark> Class</h3>
 
-		<p>The <mark>Vector</mark> class is for storing all the needed information for a vector. When a vector is created with the <mark>+ Add Vector</mark> button, its components are hooked up to the functions corresponding to that vector's instance of the <mark>Vector</mark> class. The colorpicker is connected to the <mark>changeColor()</mark> function <mark>OnInput</mark>, and it sets <mark>this.color</mark> for the vector. The <mark>draw()</mark> function draws the vector on the canvas. It accepts a <mark>scale</mark> parameter that is calculated in the <mark>redraw()</mark> function, which ensures that no arrows get drawn off of the canvas. The <mark>toggleActive()</mark> function is connected to the checkbox, which enables and disables the given vector with <mark>this.active</mark>. <mark>calcXY()</mark> is called <mark>OnInput</mark> on the magnitude and degree text inputs, setting <mark>this.magnitude</mark> and <mark>this.degree</mark> and calculating <mark>this.x</mark> and <mark>this.y</mark>. <mark>calcMagDeg()</mark> is called <mark>OnInput</mark> on the (<mark>X</mark>,<mark>Y</mark>) text inputs, setting <mark>this.x</mark> and <mark>this.y</mark> and calculating <mark>this.magnitude</mark> and <mark>this.degree</mark>. Both of these calculating functions call <mark>redraw()</mark> to draw the updated vectors on the graph. The <mark>Vector</mark> class also saves the <mark>id</mark> of the row div of its corresponding vector, which is in the <mark>"vector#"</mark> format. Since all the <mark>JavaScript</mark> vectors are saved in a <mark>vectors[]</mark> array, the index of each vector can be extracted form the div element's <mark>id</mark>.</p>
+<p>The <mark>Vector</mark> class is for storing all the needed information for a vector. When a vector is created with the <mark>+ Add Vector</mark> button, its components are hooked up to the functions corresponding to that vector's instance of the <mark>Vector</mark> class. The colorpicker is connected to the <mark>changeColor()</mark> function <mark>OnInput</mark>, and it sets <mark>this.color</mark> for the vector. The <mark>draw()</mark> function draws the vector on the canvas. It accepts a <mark>scale</mark> parameter that is calculated in the <mark>redraw()</mark> function, which ensures that no arrows get drawn off of the canvas. The <mark>toggleActive()</mark> function is connected to the checkbox, which enables and disables the given vector with <mark>this.active</mark>. <mark>calcXY()</mark> is called <mark>OnInput</mark> on the magnitude and degree text inputs, setting <mark>this.magnitude</mark> and <mark>this.degree</mark> and calculating <mark>this.x</mark> and <mark>this.y</mark>. <mark>calcMagDeg()</mark> is called <mark>OnInput</mark> on the (<mark>X</mark>,<mark>Y</mark>) text inputs, setting <mark>this.x</mark> and <mark>this.y</mark> and calculating <mark>this.magnitude</mark> and <mark>this.degree</mark>. Both of these calculating functions call <mark>redraw()</mark> to draw the updated vectors on the graph. The <mark>Vector</mark> class also saves the <mark>id</mark> of the row div of its corresponding vector, which is in the <mark>"vector#"</mark> format. Since all the <mark>JavaScript</mark> vectors are saved in a <mark>vectors[]</mark> array, the index of each vector can be extracted form the div element's <mark>id</mark>.</p>
 
 <pre data-label="Helper Functions"><code class="language-javascript match-braces rainbow-braces line-numbers">class Vector {
 	constructor (x, y, id) {
@@ -133,19 +116,3 @@ function toPolarDeg(xy) {
 	}
 }
 </code></pre>
-
-		</div>
-	</div>
-
-	<div id="footer">
-		<span id="footerText">Portfolio & website made by Kate Keefe</span>
-		<a href="https://github.com/Kmek/Portfolio" target="_blank"><button id="githubBtn">View on GitHub</button></a>
-	</div>
-
-	<div id="navBtn"></div>
-	<link rel="stylesheet" type="text/css" href="navigation.css">
-	<script src="navigation.js"></script>
-	
-	<script src="prism/prism.js"></script>
-</body>
-</html>
