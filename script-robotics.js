@@ -4,7 +4,8 @@
 const table1 = document.getElementById("table1")
 const table2 = document.getElementById("table2")
 const table3 = document.getElementById("table3")
-const tables = [table1, table2, table3]
+const table4 = document.getElementById("table4")
+const tables = [table1, table2, table3, table4]
 
 // ******************** Data Sets ******************** //
 
@@ -152,16 +153,28 @@ var dataset3 = [
     }
 ]
 
-const datasets = [dataset1, dataset2, dataset3]
+var dataset4 = [
+    {
+        event: "VRC Turkey Day Classic",
+        link: "https://www.robotevents.com/robot-competitions/vex-robotics-competition/RE-VRC-19-8805.html",
+        date: "11/16/2019",
+        rank: "4",
+        award: "Judges Award"
+    }
+]
+
+const datasets = [dataset1, dataset2, dataset3, dataset4]
 
 // ******************** Fill Tables ******************** //
 
 for (let t = 0; t < tables.length; t++) {
 
+    // Get order of table title
     let order = []
     for (let i = 0; i < 4; i++)
         order.push((tables[t].rows[0].cells[i].innerHTML).toLowerCase())
 
+    // Make a new row in the table and fill it in the order of the titles
     for (let i = 0; i < datasets[t].length; i++) {
         let newRow = tables[t].insertRow(i + 1)
 
