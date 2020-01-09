@@ -7,8 +7,6 @@ function loadFile(filename) {
     console.log("4 " + document.URL)
 }
 
-window.onhashchange() = loadFileFromUrl()
-
 function loadFileFromUrl() {
     console.log("5 " + document.URL)
     let url = document.URL
