@@ -2,8 +2,9 @@
 
 This portfolio can be viewed at kmek.github.io/Portfolio/
 
-* `index.html` - the base layout for each page
+* `index.html` - the first page loaded
 * `index-buttons.html` - the main table of contents
+* `layout.html` - the base layout for each page
 * `diffusion.html` - a page for the Diffusion Simulation
 * `pathfinding.html` - a page for the Science Fair Pathfinding code
 * `vectorsolver.html` - a page for the vector solver for physics problems
