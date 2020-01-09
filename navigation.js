@@ -16,19 +16,18 @@ navigationDiv.setAttribute("id", "navigation")
 for (let i = 0; i < navTitles.length; i++) {
     let row = document.createElement("button")
     row.innerHTML = navTitles[i]
- 
-    let link = document.createElement("a")
 
     if (i != navTitles.length - 1) {
         row.setAttribute("onclick", ("loadFile('" + navLinks[i] + "')"))
-        link.setAttribute("href", "#")
+        navigationDiv.appendChild(row)
     }
     else {
+        // For the github link, go to a url
+        let link = document.createElement("a")
         link.setAttribute("href", navLinks[i])
+        link.setAttribute("target", "_blank")
+        link.appendChild(row)
+        navigationDiv.appendChild(link)
     }
-
-    link.appendChild(row)
-    navigationDiv.appendChild(link)
 }
-
 navBtn.appendChild(navigationDiv)
