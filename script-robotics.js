@@ -27,7 +27,7 @@ var dataset1 = [
         link: "https://www.robotevents.com/robot-competitions/vex-robotics-competition/RE-VRC-16-4932.html",
         date: "12/3/2016",
         rank: "1",
-        award: "Tournament Champion"
+        award: "Tournament Champion & Excellence Award"
     }, {
         event: "VRC Frostbite Qualifier",
         link: "https://www.robotevents.com/robot-competitions/vex-robotics-competition/RE-VRC-16-5419.html",
@@ -113,7 +113,7 @@ var dataset3 = [
         link: "https://www.robotevents.com/robot-competitions/vex-robotics-competition/RE-VRC-18-6278.html",
         date: "10/20/2018",
         rank: "21",
-        award: "Think Award"
+        award: ""
     }, {
         event: "Mount Washington Valley VEX Tournament",
         link: "https://www.robotevents.com/robot-competitions/vex-robotics-competition/RE-VRC-18-5526.html",
