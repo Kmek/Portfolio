@@ -160,6 +160,20 @@ var dataset4 = [
         date: "11/16/2019",
         rank: "4",
         award: "Judges Award"
+    },
+    {
+        event: "Frostbite VRC Qualifier",
+        link: "https://www.robotevents.com/robot-competitions/vex-robotics-competition/RE-VRC-19-0097.html",
+        date: "12/14/2019",
+        rank: "30",
+        award: "n/a"
+    },
+    {
+        event: "MCC Robotics Charity VRC Qualifier - Sleep in Heavenly Peace",
+        link: "https://www.robotevents.com/robot-competitions/vex-robotics-competition/RE-VRC-19-1391.html",
+        date: "1/18/2020",
+        rank: "8",
+        award: "Tournament Champion & Excellence Award"
     }
 ]
 
