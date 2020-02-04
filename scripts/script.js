@@ -10,7 +10,7 @@ function loadFileFromUrl() {
         loadFile("index-buttons.html")
     } else {
         let file = url.slice(url.lastIndexOf("#") + 1)
-        $('#page').load(file+"#")
+        $('#page').load("docs/" + file + "#")
         window.scrollTo()
     }
 }
