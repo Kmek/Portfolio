@@ -147,7 +147,7 @@ var dataset3 = [
     }, {
         event: "2019 VEX Robotics World Championship - VRC High School - Science Division",
         link: "https://www.robotevents.com/robot-competitions/vex-robotics-competition/RE-VRC-18-6082.html",
-        date: "04/24/2019 through 04/27/2019",
+        date: "4/24/2019 through 04/27/2019",
         rank: "6",
         award: "Tournament Quarterfinalist"
     }
@@ -160,19 +160,29 @@ var dataset4 = [
         date: "11/16/2019",
         rank: "4",
         award: "Judges Award"
-    },
-    {
+    }, {
         event: "Frostbite VRC Qualifier",
         link: "https://www.robotevents.com/robot-competitions/vex-robotics-competition/RE-VRC-19-0097.html",
         date: "12/14/2019",
         rank: "30",
         award: "n/a"
-    },
-    {
+    }, {
         event: "MCC Robotics Charity VRC Qualifier - Sleep in Heavenly Peace",
         link: "https://www.robotevents.com/robot-competitions/vex-robotics-competition/RE-VRC-19-1391.html",
         date: "1/18/2020",
         rank: "8",
+        award: "Tournament Champion & Excellence Award"
+    }, {
+        event: "Fryeburg Academy VRC Qualifier",
+        link: "https://www.robotevents.com/robot-competitions/vex-robotics-competition/RE-VRC-19-1341.html",
+        date: "1/25/2020",
+        rank: "3",
+        award: "Tournament Champion & Robot Skills Champion & Judges Award"
+    }, {
+        event: "PCA Tower Takeover Qualifier",
+        link: "https://www.robotevents.com/robot-competitions/vex-robotics-competition/RE-VRC-19-1278.html",
+        date: "2/1/2020",
+        rank: "5",
         award: "Tournament Champion & Excellence Award"
     }
 ]
