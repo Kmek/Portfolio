@@ -16,6 +16,7 @@ body {
 #header {
 	background-image: linear-gradient(#818181, #0a0a0a, #414141);
 	width: 100%;
+	min-width: 500px;
 	height: 60px;
 	text-align: center;
 	padding-top: 25px;
@@ -35,7 +36,7 @@ body {
 	background-color: #eeeeee;
 	width: 75%;
 	max-width: 725px;
-	min-width: 425px;
+	min-width: 450px;
 	min-height: 300px;
 	margin-left: auto;
 	margin-right: auto;
@@ -47,6 +48,7 @@ body {
 #footer{
 	background-color: var(--footer);
 	width: 100%;
+	min-width: 500px;
 	height: 50px;
 	padding-top: 15px;
 }
@@ -61,6 +63,60 @@ body {
 	color: #ffffff;
 	float: right;
 	font-size: 16px;
+}
+
+/********** Projects Page **********/
+#projects {
+	display: grid;
+	min-height: 400px;
+	height: 75vw;
+	/* calc((3 * 200px) + (2 * 45px)) */
+	max-height: 700px;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(3, 1fr);
+	grid-gap: 4vh;
+	/* border: 1px solid green; */
+}
+
+#projects .project {
+	min-height: 130px;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	text-align: center;
+	border-radius: 10px;
+	overflow-y: hidden;
+	transition-duration: 0.5s;
+	border: 1px solid var(--accent);
+}
+#projects .project:hover {
+	box-shadow: 0 0 25px 2px var(--accent);
+	cursor: pointer;
+} 
+
+#projects .project div {
+	background-color: #eeeeee;
+	height: 0;
+	width: 100%;
+	overflow-y: hidden;
+	transition-duration: 0.5s;
+}
+#projects .project:hover div {
+	height: 30px;
+	padding-top: 5px;
+	border-bottom: 1px solid var(--accent);
+}
+
+#projects .project p {
+	position: relative;
+	bottom: -225px;
+	line-height: 25px;
+	text-indent: 0;
+	margin: 0;
+	transition-duration: 0.7s;
+}
+#projects .project:hover p {
+	bottom: -10px;
 }
 
 /********** Navigation index.html **********/
@@ -85,7 +141,6 @@ body {
 /* Good model blue: #145087 */
 
 /********** Robotics Page **********/
-
 /* Ideally 315px by 560px */
 .youtube {
 	width: 80%;
@@ -96,7 +151,6 @@ body {
 }
 
 /********** Table Properties **********/
-
 table {
 	width: 100%;
 	border-collapse: collapse;
@@ -130,7 +184,6 @@ td mark {
 	font-size: 15px;
 	padding: 0 4px;
 }
-
 
 /********** Base Components **********/
 h1, h2, h3, h4 {
@@ -202,7 +255,6 @@ a {
 }
 
 /********** Extra Components **********/
-
 .shadow { /* Creates a shadow on a div or image */
 	box-shadow: 0 0 25px 2px #000000;
 }

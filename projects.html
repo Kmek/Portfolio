@@ -1,0 +1,36 @@
+<h2>Projects</h2>
+<br>
+
+<div id="projects"></div>
+
+<script src="projects.js"></script>
+<script>
+    if (document.getElementById("projects").innerHTML == "") {
+        const projectsDiv = document.getElementById("projects")
+        for (let i = 0; i < projectSets.length; i++) {
+            let box = document.createElement("div")
+            box.setAttribute("onclick", ("loadFile('" + projectSets[i].file + "')"))
+            box.setAttribute("class", "project")
+            box.style.backgroundImage = "url('" + projectSets[i].picture + "')"
+
+            let projectTitleDiv = document.createElement("div")
+            let projectTitle = document.createElement("h4")
+            projectTitle.innerHTML = projectSets[i].title
+            projectTitleDiv.appendChild(projectTitle)
+            box.appendChild(projectTitleDiv)
+
+            if (projectSets[i].marks.length > 0) {
+                let projectP = document.createElement("P")
+                for (let j = 0; j < projectSets[i].marks.length; j++) {
+                    // let newMark = document.createElement("mark")
+                    let newMark = "<mark>" + projectSets[i].marks[j] + "</mark> "
+                    // newMark.innerHTML = 
+                    projectP.innerHTML = (projectP.innerHTML + newMark)
+                }
+                box.appendChild(projectP)
+            }
+            
+            projectsDiv.appendChild(box)
+        }
+    }
+</script>
