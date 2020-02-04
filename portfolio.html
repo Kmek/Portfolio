@@ -1,15 +1,5 @@
-<h1>Web Design</h1>
-
-<hr>
-<h2>Diffusion Webpage & Pathfinding Webpage</h2>
-
-<p>The Diffusion webpage and the Pathfinding webpage both use <mark>HTML</mark>, <mark>CSS</mark>, <mark>JavaScript</mark> to make things work. Both of these pages also use the <mark><<!-- -->canvas></mark> component to draw the actual simulation by hand. Both of these pages also heavily depend on <mark>JavaScript</mark>.</p>
-
-<div class="center outline">
-	<h4>More information can be found on these pages</h4>
-	<button onclick="loadFile('pathfinding.html')">Pathfinding Page</button>
-	<button onclick="loadFile('diffusion.html')">Diffusion Page</button>
-</div>
+<h1>Portfolio</h1>
+<p>I wanted to make a portfolio to organize information about myself and gather projects I've made I've made in the past all into one place. Because I know how to make a website, I decided to make my own portfolio as a website, hosted on GitHub Pages.</p>
 
 <hr>
 <h2>Portfolio Webpage</h2>
@@ -39,7 +29,7 @@
 </code></pre>			
 
 <h3>Portfolio Page Layout</h3>
-<p>The layout for each <mark>HTML</mark> file lives in <mark>index.html</mark>. Inside this file is a <mark><<!-- -->div></mark> with the "pageBackground" <mark>id</mark>. Inside that is a <mark><<!-- -->div></mark> with the "page" <mark>id</mark>, where each page's contents are loaded. Using a little function with <mark>JQuery</mark> called <mark>loadFile()</mark>, which puts the given <mark>filename</mark> into the "page" <mark><<!-- -->div></mark>. This eliminates the need for all of the individual page <mark>HTML</mark> files to have duplicate header and footer code.</p>
+<p>The layout for each <mark>HTML</mark> file lives in <mark>index.html</mark>. Inside this file is a <mark><<!-- -->div></mark> with the "pageBackground" <mark>id</mark>. Inside that is a <mark><<!-- -->div></mark> with the "page" <mark>id</mark>, where each page's contents are loaded. Using a little function with <mark>JQuery</mark>, called <mark>loadFile()</mark>, the contents of each page are loaded from the given <mark>filename</mark> into the "page" <mark><<!-- -->div></mark>. This eliminates the need for all of the individual page <mark>HTML</mark> files to have duplicate header and footer code.</p>
 		
 <pre data-label="Portfolio Page Layout"><code class="language-html match-braces rainbow-braces line-numbers"><<!-- -->!DOCTYPE html>
 <<!-- -->html lang="en">
@@ -54,14 +44,14 @@
 	<<!-- -->script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"><<!-- -->/script>
 	<<!-- -->script src="./script.js"><<!-- -->/script>
 <<!-- -->/head>
-<<!-- -->body>
+<<!-- -->body onhashchange="loadFileFromUrl()">
 	<<!-- -->div id="header">
 		<<!-- -->h1 id="title">Kate Keefe's Portfolio<<!-- -->/h1>
 	<<!-- -->/div>
 
 	<<!-- -->div id="pageBackground">
 		<<!-- -->div id="page">
-			<<!-- -->script>loadFile("index-buttons.html")<<!-- -->/script>
+			<<!-- -->script>loadFileFromUrl()<<!-- -->/script>
 		<<!-- -->/div>
 	<<!-- -->/div>
 
@@ -78,7 +68,18 @@
 </code></pre>
 
 <pre data-label="loadFile()"><code class="language-javascript match-braces rainbow-braces line-numbers">function loadFile(filename) {
-    $('#page').load(filename);
+    window.location.href = ("#" + filename)
+}
+
+function loadFileFromUrl() {
+    let url = document.URL
+    if (!url.includes("#")) {
+        loadFile("index-buttons.html")
+    } else {
+        let file = url.slice(url.lastIndexOf("#") + 1)
+        $('#page').load(file+"#")
+        window.scrollTo()
+    }
 }
 </code></pre>
 
@@ -95,24 +96,23 @@ for (let i = 1; i < (table.rows.length - 1); i++)
 <h3>The Navigation Dropdown</h3>
 <p>The navigation dropdown is made with <mark>navigation.js</mark> for building the dropdown and <mark>navigation.css</mark> for styling the dropdown. Inside <mark>index.html</mark>, a <mark><<!-- -->div></mark> called "navBtn" holds the navigation. The buttons themselves are created by <mark>navigation.js</mark>, which hold the <mark>navTitles</mark> and <mark>navLinks</mark> in two arrays. Before the <mark>HTML</mark> pages were loaded using the <mark>loadFile()</mark> function, this file setup made it easy to create the navigation in all pages.</p> 
 
-<pre data-label="hours.html script">
+<pre data-label="navigation.js partial script">
 <code class="language-javascript match-braces rainbow-braces line-numbers">for (let i = 0; i < navTitles.length; i++) {
-	let row = document.createElement("button")
-	row.innerHTML = navTitles[i]
-	
-	let link = document.createElement("a")
+    let row = document.createElement("button")
+    row.innerHTML = navTitles[i]
 
-	if (i != navTitles.length - 1) {
-		row.setAttribute("onclick", ("loadFile('" + navLinks[i] + "')"))
-		link.setAttribute("href", "#")
-	}
-	else {
-		link.setAttribute("href", navLinks[i])
-	}
-
-	link.appendChild(row)
-	navigationDiv.appendChild(link)
+    if (i != navTitles.length - 1) {
+        row.setAttribute("onclick", ("loadFile('" + navLinks[i] + "')"))
+        navigationDiv.appendChild(row)
+    }
+    else {
+        // For the github link, go to a url
+        let link = document.createElement("a")
+        link.setAttribute("href", navLinks[i])
+        link.setAttribute("target", "_blank")
+        link.appendChild(row)
+        navigationDiv.appendChild(link)
+    }
 }
-
 navBtn.appendChild(navigationDiv)
 </code></pre>
