@@ -34,8 +34,8 @@
 	/* New button styles */
 	width: 200px;
 	height: 41px;
-	background-color: #585858; /* change bg color */
-	border-bottom: 1px solid #08355f; /* change border color */
+	background-color: var(--footer); /* change bg color */
+	border-bottom: 1px solid var(--accent); /* change border color */
 	transition-duration: 0.5s;
 
 	/* Color styles */
@@ -44,4 +44,5 @@
 }
 #navigation button:hover {
 	width: 100%;
+	color: var(--accent);
 }

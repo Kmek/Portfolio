@@ -29,7 +29,7 @@ body {
 /********** Page **********/
 #pageBackground {
 	background-color: var(--accent);
-	background-image: url("./media/Paper.png");
+	background-image: url("../media/Paper.png");
 	background-repeat: repeat;
 }
 #page {
