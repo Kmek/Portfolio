@@ -5,7 +5,7 @@ projectSets = [{
         file: "diffusion.html"
     }, {
         title: "Pathfinding Sim",
-        picture: "media/pathfinding-sim.PNG",
+        picture: "media/pathfinding-sim.png",
         marks: ["HTML", "CSS", "JavaScript"],
         file: "pathfinding.html"
     }, {
@@ -18,6 +18,11 @@ projectSets = [{
         picture: "media/Portfolio.PNG",
         marks: ["HTML", "CSS", "JavaScript", "PrismJS", "JQuery"],
         file: "portfolio.html"
+    }, {
+        title: "CS Courses",
+        picture: "media/cs50.png",
+        marks: ["C", "JavaScript", "Java", "React Native"],
+        file: "cs50.html"
     }
 ]
 
