@@ -1,0 +1,12 @@
+/* Index-Buttons Page styles for Kate's Portfolio */
+
+/********** Navigation index.html **********/
+#index button {
+	margin: 5px 0;
+	font-size: 18px;
+}
+#index p{
+	margin-left: 25px;
+	text-indent: 0;
+	padding: 5px 0;
+}

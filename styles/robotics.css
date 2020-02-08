@@ -1,0 +1,11 @@
+/* Robotics Page styles for Kate's Portfolio */
+
+/********** Robotics Page **********/
+/* Ideally 315px by 560px */
+.youtube {
+	width: 80%;
+	max-width: 560px;
+	height: 315px;
+	margin: 5px 10%;
+	border: 1px solid #ffffff;
+}

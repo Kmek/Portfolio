@@ -1,0 +1,11 @@
+/* GrabCAD Page styles for Kate's Portfolio */
+
+/********** GrabCAD Page **********/
+.model {
+	width: 80%;
+	height: 400px;
+	margin: 5px 10%;
+	background-image: radial-gradient( #414141, #0a0a0a);
+	border-radius: 10px;
+}
+/* Good model blue: #145087 */
