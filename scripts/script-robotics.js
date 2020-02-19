@@ -1,11 +1,11 @@
 // JavaScript for robotics.html page
 
 // ******************** Define Tables ******************** //
-const table1 = document.getElementById("table1")
-const table2 = document.getElementById("table2")
-const table3 = document.getElementById("table3")
-const table4 = document.getElementById("table4")
-const tables = [table1, table2, table3, table4]
+var table1 = document.getElementById("table1")
+var table2 = document.getElementById("table2")
+var table3 = document.getElementById("table3")
+var table4 = document.getElementById("table4")
+var tables = [table1, table2, table3, table4]
 
 // ******************** Data Sets ******************** //
 
@@ -184,10 +184,16 @@ var dataset4 = [
         date: "2/1/2020",
         rank: "5",
         award: "Tournament Champion & Excellence Award"
+    }, {
+        event: "NH/VT VRC State Championship",
+        link: "https://www.robotevents.com/robot-competitions/vex-robotics-competition/RE-VRC-19-0464.html",
+        date: "2/15/2020",
+        rank: "2",
+        award: "Excellence Award & Tournament Finalist"
     }
 ]
 
-const datasets = [dataset1, dataset2, dataset3, dataset4]
+var datasets = [dataset1, dataset2, dataset3, dataset4]
 
 // ******************** Fill Tables ******************** //
 
@@ -218,4 +224,3 @@ for (let t = 0; t < tables.length; t++) {
         }
     }
 }
-
